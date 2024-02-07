@@ -94,3 +94,30 @@ encontraDisciplinasPorSemestre([NomeDisciplina|RestoListaDisciplinas], Curso, Se
     evento(ID, NomeDisciplina, _, _, _), turno(ID, Curso, _, _),
     member(Periodos, [p3, p4, p3_4]), horario(ID, _, _, _, _, Periodos),
     encontraDisciplinasPorSemestre(RestoListaDisciplinas, Curso, Semestre1, Semestre2).
+
+/*
+O predicado horasCurso/4 calcula as horais totais dum curso num periodo dum ano. Sendo horasCurso(Periodo, Curso, Ano, TotalHoras)
+true, se TotalHoras forem as horas totais dos eventos dum curso Curso num periodo Periodo dum ano Ano.
+*/
+horasCurso(Periodo, Curso, Ano, TotalHoras) :-
+    findall(ID, turno(ID, Curso, Ano, _), ListaEventosAux), sort(ListaEventosAux, ListaEventos),
+    findall(Duracao, (member(ID, ListaEventos), eventoSemestral(Periodo, PeriodoSemestre),
+        horario(ID, _, _, _, Duracao, PeriodoSemestre)), ListaHoras), !, sum_list(ListaHoras, TotalHoras).
+
+/*
+O predicado evolucaoHorasCurso/2 encontra a evolucao das horas totais dum curso a cada periodo de cada ano. Sendo
+evolucaoHorasCurso(Curso, Evolucao) true, se Evolucao for uma lista de tuplos da forma (Ano, Periodo, TotalHoras)
+ordenada ascendentemente por ano Ano e periodo Periodo e TotalHoras sendo as horas totais dum curso Curso num periodo Periodo dum ano Ano.
+*/
+evolucaoHorasCurso(Curso, Evolucao) :-
+    evolucaoHorasCursoPorLista([1, 2, 3], Curso, EvolucaoEmListas), append(EvolucaoEmListas, Evolucao).
+
+% O predicado evolucaoHorasCursoPorLista/3, ou evolucaoHorasCursoPorLista([1, 2, 3], Curso, EvolucaoEmListas),
+% encontra a evolucao das horas totais dum curso Curso a cada periodo Periodo de um ano Ano, organizando-as
+% numa lista de listas de tuplos da forma (Ano, Periodo, TotalHoras) ordenada ascendentemente por ano
+% Ano, periodo Periodo e TotalHoras sendo as horas totais dum curso num periodo Periodo dum ano Ano.
+evolucaoHorasCursoPorLista([], _, []).
+evolucaoHorasCursoPorLista([Ano | RestoAnos], Curso, [EvolucaoAnual | RestoEvolucao]) :-
+    horasCursoAnual(Curso, Ano, ListaTotalHorasAnual),
+    evolucaoAnual(Ano, ListaTotalHorasAnual, Curso, EvolucaoAnual),
+    evolucaoHorasCursoPorLista(RestoAnos, Curso, RestoEvolucao).
