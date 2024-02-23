@@ -121,3 +121,14 @@ evolucaoHorasCursoPorLista([Ano | RestoAnos], Curso, [EvolucaoAnual | RestoEvolu
     horasCursoAnual(Curso, Ano, ListaTotalHorasAnual),
     evolucaoAnual(Ano, ListaTotalHorasAnual, Curso, EvolucaoAnual),
     evolucaoHorasCursoPorLista(RestoAnos, Curso, RestoEvolucao).
+
+% O predicado horasCursoAnual/3, ou horasCursoAnual(Curso, Ano, ListaTotalHorasAnual), encontra as
+% horas totais, organizando-as numa lista ListaTotalHorasAnual, dum curso Curso a cada periodo dum ano Ano.
+horasCursoAnual(Curso, Ano, ListaTotalHorasAnual) :-
+    findall(TotalHorasPeriodo, (member(Periodo, [p1, p2, p3, p4]), horasCurso(Periodo, Curso, Ano, TotalHorasPeriodo)), ListaTotalHorasAnual).
+
+% O predicado evolucaoAnual/4, ou evolucaoAnual(Ano, ListaTotalHorasAnual, Curso, EvolucaoAnual),
+% organiza a evolucao das horas totais duma lista ListaTotalHorasAnual dum curso Curso por periodo dum ano Ano.
+evolucaoAnual(Ano, [TotalHorasPeriodo1, TotalHorasPeriodo2, TotalHorasPeriodo3, TotalHorasPeriodo4], _, EvolucaoAnual) :-
+    append([[(Ano, p1, TotalHorasPeriodo1)], [(Ano, p2, TotalHorasPeriodo2)],
+        [(Ano, p3, TotalHorasPeriodo3)], [(Ano, p4, TotalHorasPeriodo4)]], EvolucaoAnual).
