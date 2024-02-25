@@ -132,3 +132,23 @@ horasCursoAnual(Curso, Ano, ListaTotalHorasAnual) :-
 evolucaoAnual(Ano, [TotalHorasPeriodo1, TotalHorasPeriodo2, TotalHorasPeriodo3, TotalHorasPeriodo4], _, EvolucaoAnual) :-
     append([[(Ano, p1, TotalHorasPeriodo1)], [(Ano, p2, TotalHorasPeriodo2)],
         [(Ano, p3, TotalHorasPeriodo3)], [(Ano, p4, TotalHorasPeriodo4)]], EvolucaoAnual).
+
+/*
+O predicado ocupaSlot/5 calcula as horais sobrepostas entre um evento e um slot. Sendo
+ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) true, se Horas forem as horas sobrepostas
+entre um evento com entre as horas HoraInicioEvento e HoraFimEvento, e um slot entre a horas HoraInicioDada e HoraFimDada.
+*/
+ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) :-
+    HoraInicioDada =< HoraInicioEvento, HoraFimDada > HoraInicioEvento,
+    HoraFimDada =< HoraFimEvento, !, Horas is HoraFimDada - HoraInicioEvento.
+ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) :-
+    HoraFimDada >= HoraFimEvento, HoraInicioDada < HoraFimEvento,
+    HoraInicioDada > HoraInicioEvento, !, Horas is HoraFimEvento - HoraInicioDada.
+ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) :-
+    HoraInicioDada =< HoraInicioEvento, HoraFimDada >= HoraFimEvento, !,
+    Horas is HoraFimEvento - HoraInicioEvento.
+ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) :-
+    HoraInicioDada >= HoraInicioEvento, HoraFimDada =< HoraFimEvento, !,
+    Horas is HoraFimDada - HoraInicioDada.
+ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, _) :-
+    \+ (HoraFimDada =< HoraInicioEvento; HoraInicioDada >= HoraFimEvento).
