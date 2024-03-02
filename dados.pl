@@ -152,3 +152,16 @@ ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) :
     Horas is HoraFimDada - HoraInicioDada.
 ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, _) :-
     \+ (HoraFimDada =< HoraInicioEvento; HoraInicioDada >= HoraFimEvento).
+
+/*
+O predicado numHorasOcupadas/6 calcula as horas ocupadas em salas dum tipo num intervalo de tempo num dia de semana dum
+periodo. Sendo numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras) true, se SomaHoras forem as
+horas ocupadas nas salas do tipo TipoSala, entre as horas HoraInicio e HoraFim, num dia de semana DiaSemana dum periodo Periodo.
+*/
+numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, SomaHoras):-
+    salas(TipoSala, Salas),
+    findall(Horas, (eventoSemestral(Periodo, PeriodoSemestre),member(Sala, Salas),
+        horario(ID, DiaSemana, HoraInicio, HoraFim, _Duracao, PeriodoSemestre),
+        evento(ID, _NomeDisciplina, _Tipologia, _NumAlunos, Sala),
+        ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicio, HoraFim, Horas)), ListaHoras),
+    sum_list(ListaHoras, SomaHoras).
