@@ -165,3 +165,11 @@ numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, Soma
         evento(ID, _NomeDisciplina, _Tipologia, _NumAlunos, Sala),
         ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicio, HoraFim, Horas)), ListaHoras),
     sum_list(ListaHoras, SomaHoras).
+
+/*
+O predicado ocupacaoMax/4 calcula as horas possiveis de serem ocupadas em salas dum tipo num
+intervalo de tempo. Sendo ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max) true, se Max forem as
+horas possiveis de serem ocupadas por salas do tipo TipoSala, entre as horas HoraInicio e HoraFim.
+*/
+ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max) :-
+    salas(TipoSala, ListaSalas), length(ListaSalas, NumSalas), Max is NumSalas * (HoraFim - HoraInicio).
