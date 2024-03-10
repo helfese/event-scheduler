@@ -173,3 +173,9 @@ horas possiveis de serem ocupadas por salas do tipo TipoSala, entre as horas Hor
 */
 ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max) :-
     salas(TipoSala, ListaSalas), length(ListaSalas, NumSalas), Max is NumSalas * (HoraFim - HoraInicio).
+
+/*
+O predicado percentagem/3, ou percentagem(SomaHoras, Max, Percentagem), calcula a percentagem Percentagem entre as
+horas ocupadas SomaHoras e as possiveis Max em salas dum tipo num intervalo de tempo num dia de semana dum periodo.
+*/
+percentagem(SomaHoras, Max, Percentagem) :- Percentagem is (SomaHoras / Max) * 100.
