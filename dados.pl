@@ -179,3 +179,13 @@ O predicado percentagem/3, ou percentagem(SomaHoras, Max, Percentagem), calcula 
 horas ocupadas SomaHoras e as possiveis Max em salas dum tipo num intervalo de tempo num dia de semana dum periodo.
 */
 percentagem(SomaHoras, Max, Percentagem) :- Percentagem is (SomaHoras / Max) * 100.
+
+/*
+O predicado ocupacaoCritica/4 encontra casos de tipos de salas num dia de semana com um dado limite minimo de percentagem
+de ocupacao. Sendo ocupacaoCritica(HoraInicio, HoraFim, Threshold, Resultados) true, se Resultados for uma lista ordenada
+de tuplos casosCriticos(DiaSemana, TipoSala, Percentagem) com um dia de semana DiaSemana, um tipo de sala TipoSala e uma
+percentagem Percentagem de ocupacao arredondada acima dum valor critico Threshold, entre as horas HoraInicio e HoraFim.
+*/
+ocupacaoCritica(HoraInicio, HoraFim, Threshold, Resultados) :-
+    findall(casosCriticos(DiaSemana, TipoSala, PercentagemInt), (salas(TipoSala, _), horario(_, DiaSemana, _, _, _, Periodo),
+        numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras), ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max),
