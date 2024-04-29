@@ -195,3 +195,5 @@ percentagem Percentagem de ocupacao arredondada acima dum valor critico Threshol
 ocupacaoCritica(HoraInicio, HoraFim, Threshold, Resultados) :-
     findall(casosCriticos(DiaSemana, TipoSala, PercentagemInt), (salas(TipoSala, _), horario(_, DiaSemana, _, _, _, Periodo),
         numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras), ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max),
+        percentagem(SomaHoras, Max, PercentagemFloat), PercentagemFloat > Threshold, ceiling(PercentagemFloat, PercentagemInt)), ResultadosAux),
+    sort(ResultadosAux, Resultados).
