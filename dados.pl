@@ -1,3 +1,9 @@
+% Listas completas.
+:- set_prolog_flag(answer_write_options, [max_depth(0)]).
+
+% Bases de conhecimento importadas.
+:- ['dados.pl'], ['keywords.pl'].
+
 /*
 O predicado eventosSemSalas/1 encontra IDs de eventos sem salas. Sendo eventosSemSalas(EventosSemSala)
 true, se EventosSemSala for uma lista ordenada de IDs de eventos sem sala, sem IDs repetidos.
