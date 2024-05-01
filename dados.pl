@@ -2,21 +2,21 @@
 :- set_prolog_flag(answer_write_options, [max_depth(0)]).
 
 % Bases de conhecimento importadas.
-:- ['dados.pl'], ['keywords.pl'].
+:- ['data.pl'], ['keywords.pl'].
 
 /*
 O predicado eventosSemSalas/1 encontra IDs de eventos sem salas. Sendo eventosSemSalas(EventosSemSala)
 true, se EventosSemSala for uma lista ordenada de IDs de eventos sem sala, sem IDs repetidos.
 */
-eventosSemSalas(EventosSemSala) :- findall(ID, evento(ID, _, _, _, semSala), EventosSemSala).
+roomlessEvents(RoomlessEvent) :- findall(ID, event(ID, _, _, _, NoRoom), RoomlessEvent).
 
 /*
 O predicado eventosSemSalasDiaSemana/2 encontra IDs de eventos sem salas dum dia da semana.
 Sendo eventosSemSalasDiaSemana(DiaDaSemana, EventosSemSala) true, se EventosSemSala for uma
 lista ordenada de IDs de eventos sem sala, sem IDs repetidos, dum dia de semana DiaDaSemana.
 */
-eventosSemSalasDiaSemana(DiaDaSemana, EventosSemSala) :-
-    findall(ID, (evento(ID, _, _, _, semSala), horario(ID, DiaDaSemana, _, _, _, _)), EventosSemSala).
+eventosSemSalasDiaSemana(DiaDaSemana, RoomlessEvent) :-
+    findall(ID, (event(ID, _, _, _, NoRoom), horario(ID, DiaDaSemana, _, _, _, _)), RoomlessEvent).
 
 /*
 O predicado eventosSemSalasPeriodo/2 encontra IDs de eventos sem salas dum periodo. Sendo
@@ -24,12 +24,12 @@ eventosSemSalasPeriodo(ListaPeriodos, EventosSemSala) true, se EventosSemSala fo
 ordenada de IDs de eventos sem sala, sem IDs repetidos, dos periodos duma lista ListaPeriodos.
 */
 eventosSemSalasPeriodo([], []).
-eventosSemSalasPeriodo([Periodo | RestoListaPeriodos], EventosSemSala) :-
-    findall(ID,(evento(ID, _, _, _, semSala), eventoSemestral(Periodo, PeriodoSemestre),
+eventosSemSalasPeriodo([Periodo | RestoListaPeriodos], RoomlessEvent) :-
+    findall(ID,(event(ID, _, _, _, NoRoom), eventoSemestral(Periodo, PeriodoSemestre),
     horario(ID, _, _, _, _, PeriodoSemestre)), EventosSemSalasDumPeriodo), !,
     eventosSemSalasPeriodo(RestoListaPeriodos, MaisEventosSemSala),
     append([EventosSemSalasDumPeriodo, MaisEventosSemSala], EventosSemSalasPeriodos),
-    sort(EventosSemSalasPeriodos, EventosSemSala).
+    sort(EventosSemSalasPeriodos, RoomlessEvent).
 
 % O predicado eventoSemestral/2, ou eventoSemestral(Periodo, Periodos), associa
 % o periodo Periodo ao respetivo semestre, devolvendo-os no periodo PeriodoSemestre.
@@ -76,7 +76,7 @@ O predicado procuraDisciplinas/2 procura as disciplinas dum curso. Sendo procura
 true, se ListaDisciplinas for uma lista ordenada alfabeticamente das disciplinas dum curso Curso.
 */
 procuraDisciplinas(Curso, ListaDisciplinas) :-
-    findall(NomeDisciplina,(turno(ID, Curso, _, _), evento(ID, NomeDisciplina, _, _, _)), ListaDisciplinasDesordenada),
+    findall(NomeDisciplina,(turno(ID, Curso, _, _), event(ID, NomeDisciplina, _, _, _)), ListaDisciplinasDesordenada),
     sort(ListaDisciplinasDesordenada, ListaDisciplinas).
 
 /*
@@ -93,11 +93,11 @@ organizaDisciplinas(ListaDisciplinas, Curso, Semestres) :-
 % semestrais Semestre1 e Semestre2, a primeira e a segunda lista do primeiro e do segundo semestre, respetivamente, sem disciplinas repetidas.
 encontraDisciplinasPorSemestre([], _, [], []).
 encontraDisciplinasPorSemestre([NomeDisciplina | RestoListaDisciplinas], Curso, [NomeDisciplina | Semestre1], Semestre2) :-
-    evento(ID, NomeDisciplina, _, _, _), turno(ID, Curso, _, _),
+    event(ID, NomeDisciplina, _, _, _), turno(ID, Curso, _, _),
     member(Periodos, [p1, p2, p1_2]), horario(ID, _, _, _, _, Periodos),
     encontraDisciplinasPorSemestre(RestoListaDisciplinas, Curso, Semestre1, Semestre2).
 encontraDisciplinasPorSemestre([NomeDisciplina|RestoListaDisciplinas], Curso, Semestre1, [NomeDisciplina|Semestre2]) :-
-    evento(ID, NomeDisciplina, _, _, _), turno(ID, Curso, _, _),
+    event(ID, NomeDisciplina, _, _, _), turno(ID, Curso, _, _),
     member(Periodos, [p3, p4, p3_4]), horario(ID, _, _, _, _, Periodos),
     encontraDisciplinasPorSemestre(RestoListaDisciplinas, Curso, Semestre1, Semestre2).
 
@@ -168,7 +168,7 @@ numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, Soma
     salas(TipoSala, Salas),
     findall(Horas, (eventoSemestral(Periodo, PeriodoSemestre),member(Sala, Salas),
         horario(ID, DiaSemana, HoraInicio, HoraFim, _Duracao, PeriodoSemestre),
-        evento(ID, _NomeDisciplina, _Tipologia, _NumAlunos, Sala),
+        event(ID, _NomeDisciplina, _Tipologia, _NumAlunos, Sala),
         ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicio, HoraFim, Horas)), ListaHoras),
     sum_list(ListaHoras, SomaHoras).
 
