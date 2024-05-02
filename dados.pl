@@ -24,16 +24,16 @@ eventosSemSalasPeriodo(ListaPeriodos, EventosSemSala) true, se EventosSemSala fo
 ordenada de IDs de eventos sem sala, sem IDs repetidos, dos periodos duma lista ListaPeriodos.
 */
 eventsNoRoomPeriod([], []).
-eventsNoRoomPeriod([Periodo | RestoListaPeriodos], RoomlessEvent) :-
-    findall(ID,(event(ID, _, _, _, NoRoom), eventoSemestral(Periodo, PeriodoSemestre),
-    schedule(ID, _, _, _, _, PeriodoSemestre)), EventsNoRoomPeriod), !,
-    eventsNoRoomPeriod(RestoListaPeriodos, MaisEventosSemSala),
-    append([EventsNoRoomPeriod, MaisEventosSemSala], EventsNoRoomPeriods),
+eventsNoRoomPeriod([Period | OtherPeriods], RoomlessEvent) :-
+    findall(ID,(event(ID, _, _, _, NoRoom), eventSemester(Period, PeriodSemester),
+    schedule(ID, _, _, _, _, PeriodSemester)), EventsNoRoomPeriod), !,
+    eventsNoRoomPeriod(OtherPeriods, MoreRoomlessEvent),
+    append([EventsNoRoomPeriod, MoreRoomlessEvent], EventsNoRoomPeriods),
     sort(EventsNoRoomPeriods, RoomlessEvent).
 
 % O predicado eventoSemestral/2, ou eventoSemestral(Periodo, Periodos), associa
 % o periodo Periodo ao respetivo semestre, devolvendo-os no periodo PeriodoSemestre.
-eventoSemestral(Periodo, PeriodoSemestre) :-
+eventSemester(Periodo, PeriodoSemestre) :-
     Periodo == p1, member(PeriodoSemestre, [Periodo, p1_2]);
     Periodo == p2, member(PeriodoSemestre, [Periodo, p1_2]);
     Periodo == p3, member(PeriodoSemestre, [Periodo, p3_4]);
@@ -53,7 +53,7 @@ organizaEventos(ListaEventos, Periodo, EventosNoPeriodo) :-
 % Periodo, organizando-os numa lista desordenada EventosNoPeriodoDesordenados.
 organizaEventosDesordenado([], _, []).
 organizaEventosDesordenado([Evento | RestoListaEventos], Periodo, [Evento | EventosNoPeriodo]) :-
-    eventoSemestral(Periodo, PeriodoSemestre), schedule(Evento, _, _, _, _, PeriodoSemestre), !,
+    eventSemester(Periodo, PeriodoSemestre), schedule(Evento, _, _, _, _, PeriodoSemestre), !,
     organizaEventosDesordenado(RestoListaEventos, Periodo, EventosNoPeriodo).
 organizaEventosDesordenado([_ | RestoListaEventos], Periodo, EventosNoPeriodo) :-
     organizaEventosDesordenado(RestoListaEventos, Periodo, EventosNoPeriodo).
@@ -107,7 +107,7 @@ true, se TotalHoras forem as horas totais dos eventos dum curso Curso num period
 */
 horasCurso(Periodo, Curso, Ano, TotalHoras) :-
     findall(ID, turno(ID, Curso, Ano, _), ListaEventosAux), sort(ListaEventosAux, ListaEventos),
-    findall(Duracao, (member(ID, ListaEventos), eventoSemestral(Periodo, PeriodoSemestre),
+    findall(Duracao, (member(ID, ListaEventos), eventSemester(Periodo, PeriodoSemestre),
         schedule(ID, _, _, _, Duracao, PeriodoSemestre)), ListaHoras), !, sum_list(ListaHoras, TotalHoras).
 
 /*
@@ -166,7 +166,7 @@ horas ocupadas nas salas do tipo TipoSala, entre as horas HoraInicio e HoraFim, 
 */
 numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, SomaHoras):-
     salas(TipoSala, Salas),
-    findall(Horas, (eventoSemestral(Periodo, PeriodoSemestre),member(Sala, Salas),
+    findall(Horas, (eventSemester(Periodo, PeriodoSemestre),member(Sala, Salas),
         schedule(ID, DiaSemana, HoraInicio, HoraFim, _Duracao, PeriodoSemestre),
         event(ID, _NomeDisciplina, _Tipologia, _NumAlunos, Sala),
         ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicio, HoraFim, Horas)), ListaHoras),
