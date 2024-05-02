@@ -15,21 +15,21 @@ O predicado eventosSemSalasDiaSemana/2 encontra IDs de eventos sem salas dum dia
 Sendo eventosSemSalasDiaSemana(DiaDaSemana, EventosSemSala) true, se EventosSemSala for uma
 lista ordenada de IDs de eventos sem sala, sem IDs repetidos, dum dia de semana DiaDaSemana.
 */
-eventosSemSalasDiaSemana(DiaDaSemana, RoomlessEvent) :-
-    findall(ID, (event(ID, _, _, _, NoRoom), horario(ID, DiaDaSemana, _, _, _, _)), RoomlessEvent).
+eventsNoRoomWeekday(Weekday, RoomlessEvent) :-
+    findall(ID, (event(ID, _, _, _, NoRoom), schedule(ID, Weekday, _, _, _, _)), RoomlessEvent).
 
 /*
 O predicado eventosSemSalasPeriodo/2 encontra IDs de eventos sem salas dum periodo. Sendo
 eventosSemSalasPeriodo(ListaPeriodos, EventosSemSala) true, se EventosSemSala for uma lista
 ordenada de IDs de eventos sem sala, sem IDs repetidos, dos periodos duma lista ListaPeriodos.
 */
-eventosSemSalasPeriodo([], []).
-eventosSemSalasPeriodo([Periodo | RestoListaPeriodos], RoomlessEvent) :-
+eventsNoRoomPeriod([], []).
+eventsNoRoomPeriod([Periodo | RestoListaPeriodos], RoomlessEvent) :-
     findall(ID,(event(ID, _, _, _, NoRoom), eventoSemestral(Periodo, PeriodoSemestre),
-    horario(ID, _, _, _, _, PeriodoSemestre)), EventosSemSalasDumPeriodo), !,
-    eventosSemSalasPeriodo(RestoListaPeriodos, MaisEventosSemSala),
-    append([EventosSemSalasDumPeriodo, MaisEventosSemSala], EventosSemSalasPeriodos),
-    sort(EventosSemSalasPeriodos, RoomlessEvent).
+    schedule(ID, _, _, _, _, PeriodoSemestre)), EventsNoRoomPeriod), !,
+    eventsNoRoomPeriod(RestoListaPeriodos, MaisEventosSemSala),
+    append([EventsNoRoomPeriod, MaisEventosSemSala], EventsNoRoomPeriods),
+    sort(EventsNoRoomPeriods, RoomlessEvent).
 
 % O predicado eventoSemestral/2, ou eventoSemestral(Periodo, Periodos), associa
 % o periodo Periodo ao respetivo semestre, devolvendo-os no periodo PeriodoSemestre.
@@ -53,7 +53,7 @@ organizaEventos(ListaEventos, Periodo, EventosNoPeriodo) :-
 % Periodo, organizando-os numa lista desordenada EventosNoPeriodoDesordenados.
 organizaEventosDesordenado([], _, []).
 organizaEventosDesordenado([Evento | RestoListaEventos], Periodo, [Evento | EventosNoPeriodo]) :-
-    eventoSemestral(Periodo, PeriodoSemestre), horario(Evento, _, _, _, _, PeriodoSemestre), !,
+    eventoSemestral(Periodo, PeriodoSemestre), schedule(Evento, _, _, _, _, PeriodoSemestre), !,
     organizaEventosDesordenado(RestoListaEventos, Periodo, EventosNoPeriodo).
 organizaEventosDesordenado([_ | RestoListaEventos], Periodo, EventosNoPeriodo) :-
     organizaEventosDesordenado(RestoListaEventos, Periodo, EventosNoPeriodo).
@@ -64,13 +64,13 @@ Sendo eventosMenoresQue(Duracao, ListaEventosMenoresQue) true, se ListaEventosMe
 lista ordenada de IDs de eventos, sem IDs repetidos, de duracao menor ou igual a duracao duma Duracao.
 */
 eventosMenoresQue(Duracao, ListaEventosMenoresQue) :-
-    findall(ID, (horario(ID, _, _, _, Duracoes, _), Duracoes =< Duracao), ListaEventosMenoresQue).
+    findall(ID, (schedule(ID, _, _, _, Duracoes, _), Duracoes =< Duracao), ListaEventosMenoresQue).
 
 /*
 O predicado eventosMenoresQueBool/2 verifica se um evento tem um dado limite maximo de duracao. Sendo
 eventosMenoresQueBool(ID, Duracao) true, se o evento identificado pelo ID tiver duracao menor ou igual a duracao duma Duracao.
 */
-eventosMenoresQueBool(ID, Duracao) :- horario(ID, _, _, _, Duracoes, _), Duracoes =< Duracao.
+eventosMenoresQueBool(ID, Duracao) :- schedule(ID, _, _, _, Duracoes, _), Duracoes =< Duracao.
 
 O predicado procuraDisciplinas/2 procura as disciplinas dum curso. Sendo procuraDisciplinas(Curso, ListaDisciplinas)
 true, se ListaDisciplinas for uma lista ordenada alfabeticamente das disciplinas dum curso Curso.
@@ -94,11 +94,11 @@ organizaDisciplinas(ListaDisciplinas, Curso, Semestres) :-
 encontraDisciplinasPorSemestre([], _, [], []).
 encontraDisciplinasPorSemestre([NomeDisciplina | RestoListaDisciplinas], Curso, [NomeDisciplina | Semestre1], Semestre2) :-
     event(ID, NomeDisciplina, _, _, _), turno(ID, Curso, _, _),
-    member(Periodos, [p1, p2, p1_2]), horario(ID, _, _, _, _, Periodos),
+    member(Periodos, [p1, p2, p1_2]), schedule(ID, _, _, _, _, Periodos),
     encontraDisciplinasPorSemestre(RestoListaDisciplinas, Curso, Semestre1, Semestre2).
 encontraDisciplinasPorSemestre([NomeDisciplina|RestoListaDisciplinas], Curso, Semestre1, [NomeDisciplina|Semestre2]) :-
     event(ID, NomeDisciplina, _, _, _), turno(ID, Curso, _, _),
-    member(Periodos, [p3, p4, p3_4]), horario(ID, _, _, _, _, Periodos),
+    member(Periodos, [p3, p4, p3_4]), schedule(ID, _, _, _, _, Periodos),
     encontraDisciplinasPorSemestre(RestoListaDisciplinas, Curso, Semestre1, Semestre2).
 
 /*
@@ -108,7 +108,7 @@ true, se TotalHoras forem as horas totais dos eventos dum curso Curso num period
 horasCurso(Periodo, Curso, Ano, TotalHoras) :-
     findall(ID, turno(ID, Curso, Ano, _), ListaEventosAux), sort(ListaEventosAux, ListaEventos),
     findall(Duracao, (member(ID, ListaEventos), eventoSemestral(Periodo, PeriodoSemestre),
-        horario(ID, _, _, _, Duracao, PeriodoSemestre)), ListaHoras), !, sum_list(ListaHoras, TotalHoras).
+        schedule(ID, _, _, _, Duracao, PeriodoSemestre)), ListaHoras), !, sum_list(ListaHoras, TotalHoras).
 
 /*
 O predicado evolucaoHorasCurso/2 encontra a evolucao das horas totais dum curso a cada periodo de cada ano. Sendo
@@ -167,7 +167,7 @@ horas ocupadas nas salas do tipo TipoSala, entre as horas HoraInicio e HoraFim, 
 numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, SomaHoras):-
     salas(TipoSala, Salas),
     findall(Horas, (eventoSemestral(Periodo, PeriodoSemestre),member(Sala, Salas),
-        horario(ID, DiaSemana, HoraInicio, HoraFim, _Duracao, PeriodoSemestre),
+        schedule(ID, DiaSemana, HoraInicio, HoraFim, _Duracao, PeriodoSemestre),
         event(ID, _NomeDisciplina, _Tipologia, _NumAlunos, Sala),
         ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicio, HoraFim, Horas)), ListaHoras),
     sum_list(ListaHoras, SomaHoras).
@@ -193,7 +193,7 @@ de tuplos casosCriticos(DiaSemana, TipoSala, Percentagem) com um dia de semana D
 percentagem Percentagem de ocupacao arredondada acima dum valor critico Threshold, entre as horas HoraInicio e HoraFim.
 */
 ocupacaoCritica(HoraInicio, HoraFim, Threshold, Resultados) :-
-    findall(casosCriticos(DiaSemana, TipoSala, PercentagemInt), (salas(TipoSala, _), horario(_, DiaSemana, _, _, _, Periodo),
+    findall(casosCriticos(DiaSemana, TipoSala, PercentagemInt), (salas(TipoSala, _), schedule(_, DiaSemana, _, _, _, Periodo),
         numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras), ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max),
         percentagem(SomaHoras, Max, PercentagemFloat), PercentagemFloat > Threshold, ceiling(PercentagemFloat, PercentagemInt)), ResultadosAux),
     sort(ResultadosAux, Resultados).
