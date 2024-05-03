@@ -33,30 +33,30 @@ eventsNoRoomPeriod([Period | OtherPeriods], RoomlessEvent) :-
 
 % O predicado eventoSemestral/2, ou eventoSemestral(Periodo, Periodos), associa
 % o periodo Periodo ao respetivo semestre, devolvendo-os no periodo PeriodoSemestre.
-eventSemester(Periodo, PeriodoSemestre) :-
-    Periodo == p1, member(PeriodoSemestre, [Periodo, p1_2]);
-    Periodo == p2, member(PeriodoSemestre, [Periodo, p1_2]);
-    Periodo == p3, member(PeriodoSemestre, [Periodo, p3_4]);
-    Periodo == p4, member(PeriodoSemestre, [Periodo, p3_4]).
+eventSemester(Period, PeriodSemester) :-
+    Period == p1, member(PeriodSemester, [Period, p1_2]);
+    Period == p2, member(PeriodSemester, [Period, p1_2]);
+    Period == p3, member(PeriodSemester, [Period, p3_4]);
+    Period == p4, member(PeriodSemester, [Period, p3_4]).
 
 /*
 O predicado organizaEventos/3 encontra e ordena os IDs de eventos em duns do mesmo. Sendo
 organizaEventos(ListaEventos, Periodo, EventosNoPeriodo) true, se EventosNoPeriodo for uma
 lista ordenada de IDs de eventos duma lista ListaEventos, sem IDs repetidos, dum periodo Periodo.
 */
-organizaEventos(ListaEventos, Periodo, EventosNoPeriodo) :-
-    organizaEventosDesordenado(ListaEventos, Periodo, EventosNoPeriodoDesordenados),
-    sort(EventosNoPeriodoDesordenados, EventosNoPeriodo).
+sortEvents(Events, Period, EventsPeriod) :-
+    groupEvents(Events, Period, EventsPeriodUnsorted),
+    sort(EventsPeriodUnsorted, EventsPeriod).
 
 % O predicado organizaEventosDesordenado/3, ou organizaEventos(ListaEventos, Periodo, EventosNoPeriodoDesordenados),
 % encontra IDs de eventos duma lista ListaEventos em duns do mesmo periodo
 % Periodo, organizando-os numa lista desordenada EventosNoPeriodoDesordenados.
-organizaEventosDesordenado([], _, []).
-organizaEventosDesordenado([Evento | RestoListaEventos], Periodo, [Evento | EventosNoPeriodo]) :-
-    eventSemester(Periodo, PeriodoSemestre), schedule(Evento, _, _, _, _, PeriodoSemestre), !,
-    organizaEventosDesordenado(RestoListaEventos, Periodo, EventosNoPeriodo).
-organizaEventosDesordenado([_ | RestoListaEventos], Periodo, EventosNoPeriodo) :-
-    organizaEventosDesordenado(RestoListaEventos, Periodo, EventosNoPeriodo).
+groupEvents([], _, []).
+groupEvents([Event | OtherEvents], Period, [Event | EventsPeriod]) :-
+    eventSemester(Period, PeriodSemester), schedule(Event, _, _, _, _, PeriodSemester), !,
+    groupEvents(OtherEvents, Period, EventsPeriod).
+groupEvents([_ | OtherEvents], Period, EventsPeriod) :-
+    groupEvents(OtherEvents, Period, EventsPeriod).
 
 /*
 O predicado eventosMenoresQue/2 encontra IDs de eventos com um dado limite maximo de duracao.
@@ -197,3 +197,4 @@ ocupacaoCritica(HoraInicio, HoraFim, Threshold, Resultados) :-
         numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras), ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max),
         percentagem(SomaHoras, Max, PercentagemFloat), PercentagemFloat > Threshold, ceiling(PercentagemFloat, PercentagemInt)), ResultadosAux),
     sort(ResultadosAux, Resultados).
+    
