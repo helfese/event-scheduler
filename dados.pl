@@ -70,14 +70,15 @@ eventsDurationLess(Duration, EventsDurationLess) :-
 O predicado eventosMenoresQueBool/2 verifica se um evento tem um dado limite maximo de duracao. Sendo
 eventosMenoresQueBool(ID, Duracao) true, se o evento identificado pelo ID tiver duracao menor ou igual a duracao duma Duracao.
 */
-eventosMenoresQueBool(ID, Duration) :- schedule(ID, _, _, _, Durations, _), Durations =< Duration.
+eventsDurationLessBool(ID, Duration) :- schedule(ID, _, _, _, Durations, _), Durations =< Duration.
 
+/*
 O predicado procuraDisciplinas/2 procura as disciplinas dum curso. Sendo procuraDisciplinas(Curso, ListaDisciplinas)
 true, se ListaDisciplinas for uma lista ordenada alfabeticamente das disciplinas dum curso Curso.
 */
-procuraDisciplinas(Curso, ListaDisciplinas) :-
-    findall(NomeDisciplina,(turno(ID, Curso, _, _), event(ID, NomeDisciplina, _, _, _)), ListaDisciplinasDesordenada),
-    sort(ListaDisciplinasDesordenada, ListaDisciplinas).
+findClasses(Major, Classes) :-
+    findall(Class,(turno(ID, Major, _, _), event(ID, Class, _, _, _)), ClassesUnsorted),
+    sort(ClassesUnsorted, Classes).
 
 /*
 O predicado organizaDisciplinas/3 organiza as disciplinas dum curso por semestre. Sendo
@@ -85,8 +86,8 @@ organizaDisciplinas(ListaDisciplinas, Curso, Semestres) true, se Semestres for u
 ordenadas alfabeticamente de disciplinas semestrais, sem disciplinas repetidas, duma lista ListaDisciplinas
 dum curso Curso. Sendo a primeira e a segunda lista do primeiro e do segundo semestre, respetivamente.
 */
-organizaDisciplinas(ListaDisciplinas, Curso, Semestres) :-
-    encontraDisciplinasPorSemestre(ListaDisciplinas, Curso, Semestre1, Semestre2), !, append([[Semestre1], [Semestre2]], Semestres).
+organizaDisciplinas(Classes, Curso, Semestres) :-
+    encontraDisciplinasPorSemestre(Classes, Curso, Semestre1, Semestre2), !, append([[Semestre1], [Semestre2]], Semestres).
 
 % O predicado encontraDisciplinasPorSemestre/4, ou organizaDisciplinas(ListaDisciplinas, Curso, Semestre1, Semestre2),
 % organiza as disciplinas duma lista ListaDisciplinas dum curso Curso por semestre nas listas ordenadas alfabeticamente de disciplinas
