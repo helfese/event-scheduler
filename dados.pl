@@ -63,14 +63,14 @@ O predicado eventosMenoresQue/2 encontra IDs de eventos com um dado limite maxim
 Sendo eventosMenoresQue(Duracao, ListaEventosMenoresQue) true, se ListaEventosMenoresQue for uma
 lista ordenada de IDs de eventos, sem IDs repetidos, de duracao menor ou igual a duracao duma Duracao.
 */
-eventosMenoresQue(Duracao, ListaEventosMenoresQue) :-
-    findall(ID, (schedule(ID, _, _, _, Duracoes, _), Duracoes =< Duracao), ListaEventosMenoresQue).
+eventsDurationLess(Duration, EventsDurationLess) :-
+    findall(ID, (schedule(ID, _, _, _, Durations, _), Durations =< Duration), EventsDurationLess).
 
 /*
 O predicado eventosMenoresQueBool/2 verifica se um evento tem um dado limite maximo de duracao. Sendo
 eventosMenoresQueBool(ID, Duracao) true, se o evento identificado pelo ID tiver duracao menor ou igual a duracao duma Duracao.
 */
-eventosMenoresQueBool(ID, Duracao) :- schedule(ID, _, _, _, Duracoes, _), Duracoes =< Duracao.
+eventosMenoresQueBool(ID, Duration) :- schedule(ID, _, _, _, Durations, _), Durations =< Duration.
 
 O predicado procuraDisciplinas/2 procura as disciplinas dum curso. Sendo procuraDisciplinas(Curso, ListaDisciplinas)
 true, se ListaDisciplinas for uma lista ordenada alfabeticamente das disciplinas dum curso Curso.
@@ -107,8 +107,8 @@ true, se TotalHoras forem as horas totais dos eventos dum curso Curso num period
 */
 horasCurso(Periodo, Curso, Ano, TotalHoras) :-
     findall(ID, turno(ID, Curso, Ano, _), ListaEventosAux), sort(ListaEventosAux, ListaEventos),
-    findall(Duracao, (member(ID, ListaEventos), eventSemester(Periodo, PeriodoSemestre),
-        schedule(ID, _, _, _, Duracao, PeriodoSemestre)), ListaHoras), !, sum_list(ListaHoras, TotalHoras).
+    findall(Duration, (member(ID, ListaEventos), eventSemester(Periodo, PeriodoSemestre),
+        schedule(ID, _, _, _, Duration, PeriodoSemestre)), ListaHoras), !, sum_list(ListaHoras, TotalHoras).
 
 /*
 O predicado evolucaoHorasCurso/2 encontra a evolucao das horas totais dum curso a cada periodo de cada ano. Sendo
@@ -167,7 +167,7 @@ horas ocupadas nas salas do tipo TipoSala, entre as horas HoraInicio e HoraFim, 
 numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, SomaHoras):-
     salas(TipoSala, Salas),
     findall(Horas, (eventSemester(Periodo, PeriodoSemestre),member(Sala, Salas),
-        schedule(ID, DiaSemana, HoraInicio, HoraFim, _Duracao, PeriodoSemestre),
+        schedule(ID, DiaSemana, HoraInicio, HoraFim, _Duration, PeriodoSemestre),
         event(ID, _NomeDisciplina, _Tipologia, _NumAlunos, Sala),
         ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicio, HoraFim, Horas)), ListaHoras),
     sum_list(ListaHoras, SomaHoras).
