@@ -86,28 +86,28 @@ organizaDisciplinas(ListaDisciplinas, Curso, Semestres) true, se Semestres for u
 ordenadas alfabeticamente de disciplinas semestrais, sem disciplinas repetidas, duma lista ListaDisciplinas
 dum curso Curso. Sendo a primeira e a segunda lista do primeiro e do segundo semestre, respetivamente.
 */
-organizaDisciplinas(Classes, Curso, Semestres) :-
-    encontraDisciplinasPorSemestre(Classes, Curso, Semestre1, Semestre2), !, append([[Semestre1], [Semestre2]], Semestres).
+groupClasses(Classes, Major, Semesters) :-
+    findClassesSemester(Classes, Major, Fall, Spring), !, append([[Fall], [Spring]], Semesters).
 
 % O predicado encontraDisciplinasPorSemestre/4, ou organizaDisciplinas(ListaDisciplinas, Curso, Semestre1, Semestre2),
 % organiza as disciplinas duma lista ListaDisciplinas dum curso Curso por semestre nas listas ordenadas alfabeticamente de disciplinas
 % semestrais Semestre1 e Semestre2, a primeira e a segunda lista do primeiro e do segundo semestre, respetivamente, sem disciplinas repetidas.
-encontraDisciplinasPorSemestre([], _, [], []).
-encontraDisciplinasPorSemestre([NomeDisciplina | RestoListaDisciplinas], Curso, [NomeDisciplina | Semestre1], Semestre2) :-
-    event(ID, NomeDisciplina, _, _, _), turno(ID, Curso, _, _),
+findClassesSemester([], _, [], []).
+findClassesSemester([NomeDisciplina | RestoListaDisciplinas], Major, [NomeDisciplina | Fall], Spring) :-
+    event(ID, NomeDisciplina, _, _, _), turno(ID, Major, _, _),
     member(Periodos, [p1, p2, p1_2]), schedule(ID, _, _, _, _, Periodos),
-    encontraDisciplinasPorSemestre(RestoListaDisciplinas, Curso, Semestre1, Semestre2).
-encontraDisciplinasPorSemestre([NomeDisciplina|RestoListaDisciplinas], Curso, Semestre1, [NomeDisciplina|Semestre2]) :-
-    event(ID, NomeDisciplina, _, _, _), turno(ID, Curso, _, _),
+    findClassesSemester(RestoListaDisciplinas, Major, Fall, Spring).
+findClassesSemester([NomeDisciplina|RestoListaDisciplinas], Major, Fall, [NomeDisciplina | Spring]) :-
+    event(ID, NomeDisciplina, _, _, _), turno(ID, Major, _, _),
     member(Periodos, [p3, p4, p3_4]), schedule(ID, _, _, _, _, Periodos),
-    encontraDisciplinasPorSemestre(RestoListaDisciplinas, Curso, Semestre1, Semestre2).
+    findClassesSemester(RestoListaDisciplinas, Major, Fall, Spring).
 
 /*
 O predicado horasCurso/4 calcula as horais totais dum curso num periodo dum ano. Sendo horasCurso(Periodo, Curso, Ano, TotalHoras)
 true, se TotalHoras forem as horas totais dos eventos dum curso Curso num periodo Periodo dum ano Ano.
 */
-horasCurso(Periodo, Curso, Ano, TotalHoras) :-
-    findall(ID, turno(ID, Curso, Ano, _), ListaEventosAux), sort(ListaEventosAux, ListaEventos),
+horasCurso(Periodo, Major, Year, TotalHoras) :-
+    findall(ID, turno(ID, Major, Year, _), ListaEventosAux), sort(ListaEventosAux, ListaEventos),
     findall(Duration, (member(ID, ListaEventos), eventSemester(Periodo, PeriodoSemestre),
         schedule(ID, _, _, _, Duration, PeriodoSemestre)), ListaHoras), !, sum_list(ListaHoras, TotalHoras).
 
@@ -116,29 +116,29 @@ O predicado evolucaoHorasCurso/2 encontra a evolucao das horas totais dum curso 
 evolucaoHorasCurso(Curso, Evolucao) true, se Evolucao for uma lista de tuplos da forma (Ano, Periodo, TotalHoras)
 ordenada ascendentemente por ano Ano e periodo Periodo e TotalHoras sendo as horas totais dum curso Curso num periodo Periodo dum ano Ano.
 */
-evolucaoHorasCurso(Curso, Evolucao) :-
-    evolucaoHorasCursoPorLista([1, 2, 3], Curso, EvolucaoEmListas), append(EvolucaoEmListas, Evolucao).
+evolucaoHorasCurso(Major, Evolucao) :-
+    evolucaoHorasCursoPorLista([1, 2, 3], Major, EvolucaoEmListas), append(EvolucaoEmListas, Evolucao).
 
 % O predicado evolucaoHorasCursoPorLista/3, ou evolucaoHorasCursoPorLista([1, 2, 3], Curso, EvolucaoEmListas),
 % encontra a evolucao das horas totais dum curso Curso a cada periodo Periodo de um ano Ano, organizando-as
 % numa lista de listas de tuplos da forma (Ano, Periodo, TotalHoras) ordenada ascendentemente por ano
 % Ano, periodo Periodo e TotalHoras sendo as horas totais dum curso num periodo Periodo dum ano Ano.
 evolucaoHorasCursoPorLista([], _, []).
-evolucaoHorasCursoPorLista([Ano | RestoAnos], Curso, [EvolucaoAnual | RestoEvolucao]) :-
-    horasCursoAnual(Curso, Ano, ListaTotalHorasAnual),
-    evolucaoAnual(Ano, ListaTotalHorasAnual, Curso, EvolucaoAnual),
-    evolucaoHorasCursoPorLista(RestoAnos, Curso, RestoEvolucao).
+evolucaoHorasCursoPorLista([Year | RestoAnos], CuMajorrso, [EvolucaoAnual | RestoEvolucao]) :-
+    horasCursoAnual(Major, Year, ListaTotalHorasAnual),
+    evolucaoAnual(Year, ListaTotalHorasAnual, Major, EvolucaoAnual),
+    evolucaoHorasCursoPorLista(RestoAnos, Major, RestoEvolucao).
 
 % O predicado horasCursoAnual/3, ou horasCursoAnual(Curso, Ano, ListaTotalHorasAnual), encontra as
 % horas totais, organizando-as numa lista ListaTotalHorasAnual, dum curso Curso a cada periodo dum ano Ano.
-horasCursoAnual(Curso, Ano, ListaTotalHorasAnual) :-
-    findall(TotalHorasPeriodo, (member(Periodo, [p1, p2, p3, p4]), horasCurso(Periodo, Curso, Ano, TotalHorasPeriodo)), ListaTotalHorasAnual).
+horasCursoAnual(Major, Year, ListaTotalHorasAnual) :-
+    findall(TotalHorasPeriodo, (member(Periodo, [p1, p2, p3, p4]), horasCurso(Periodo, Major, Year, TotalHorasPeriodo)), ListaTotalHorasAnual).
 
 % O predicado evolucaoAnual/4, ou evolucaoAnual(Ano, ListaTotalHorasAnual, Curso, EvolucaoAnual),
 % organiza a evolucao das horas totais duma lista ListaTotalHorasAnual dum curso Curso por periodo dum ano Ano.
-evolucaoAnual(Ano, [TotalHorasPeriodo1, TotalHorasPeriodo2, TotalHorasPeriodo3, TotalHorasPeriodo4], _, EvolucaoAnual) :-
-    append([[(Ano, p1, TotalHorasPeriodo1)], [(Ano, p2, TotalHorasPeriodo2)],
-        [(Ano, p3, TotalHorasPeriodo3)], [(Ano, p4, TotalHorasPeriodo4)]], EvolucaoAnual).
+evolucaoAnual(Year, [TotalHorasPeriodo1, TotalHorasPeriodo2, TotalHorasPeriodo3, TotalHorasPeriodo4], _, EvolucaoAnual) :-
+    append([[(Year, p1, TotalHorasPeriodo1)], [(Year, p2, TotalHorasPeriodo2)],
+        [(Year, p3, TotalHorasPeriodo3)], [(Year, p4, TotalHorasPeriodo4)]], EvolucaoAnual).
 
 /*
 O predicado ocupaSlot/5 calcula as horais sobrepostas entre um evento e um slot. Sendo
