@@ -77,7 +77,7 @@ O predicado procuraDisciplinas/2 procura as disciplinas dum curso. Sendo procura
 true, se ListaDisciplinas for uma lista ordenada alfabeticamente das disciplinas dum curso Curso.
 */
 findClasses(Major, Classes) :-
-    findall(Class,(turno(ID, Major, _, _), event(ID, Class, _, _, _)), ClassesUnsorted),
+    findall(Class,(shift(ID, Major, _, _), event(ID, Class, _, _, _)), ClassesUnsorted),
     sort(ClassesUnsorted, Classes).
 
 /*
