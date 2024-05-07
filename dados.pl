@@ -93,21 +93,21 @@ groupClasses(Classes, Major, Semesters) :-
 % organiza as disciplinas duma lista ListaDisciplinas dum curso Curso por semestre nas listas ordenadas alfabeticamente de disciplinas
 % semestrais Semestre1 e Semestre2, a primeira e a segunda lista do primeiro e do segundo semestre, respetivamente, sem disciplinas repetidas.
 findClassesSemester([], _, [], []).
-findClassesSemester([NomeDisciplina | RestoListaDisciplinas], Major, [NomeDisciplina | Fall], Spring) :-
-    event(ID, NomeDisciplina, _, _, _), turno(ID, Major, _, _),
-    member(Periodos, [p1, p2, p1_2]), schedule(ID, _, _, _, _, Periodos),
-    findClassesSemester(RestoListaDisciplinas, Major, Fall, Spring).
-findClassesSemester([NomeDisciplina|RestoListaDisciplinas], Major, Fall, [NomeDisciplina | Spring]) :-
-    event(ID, NomeDisciplina, _, _, _), turno(ID, Major, _, _),
-    member(Periodos, [p3, p4, p3_4]), schedule(ID, _, _, _, _, Periodos),
-    findClassesSemester(RestoListaDisciplinas, Major, Fall, Spring).
+findClassesSemester([Class | OtherClasses], Major, [Class | Fall], Spring) :-
+    event(ID, Class, _, _, _), shift(ID, Major, _, _),
+    member(Periods, [p1, p2, p1_2]), schedule(ID, _, _, _, _, Periods),
+    findClassesSemester(OtherClasses, Major, Fall, Spring).
+findClassesSemester([Class | OtherClasses], Major, Fall, [Class | Spring]) :-
+    event(ID, Class, _, _, _), shift(ID, Major, _, _),
+    member(Periods, [p3, p4, p3_4]), schedule(ID, _, _, _, _, Periods),
+    findClassesSemester(OtherClasses, Major, Fall, Spring).
 
 /*
 O predicado horasCurso/4 calcula as horais totais dum curso num periodo dum ano. Sendo horasCurso(Periodo, Curso, Ano, TotalHoras)
 true, se TotalHoras forem as horas totais dos eventos dum curso Curso num periodo Periodo dum ano Ano.
 */
 horasCurso(Periodo, Major, Year, TotalHoras) :-
-    findall(ID, turno(ID, Major, Year, _), ListaEventosAux), sort(ListaEventosAux, ListaEventos),
+    findall(ID, shift(ID, Major, Year, _), ListaEventosAux), sort(ListaEventosAux, ListaEventos),
     findall(Duration, (member(ID, ListaEventos), eventSemester(Periodo, PeriodoSemestre),
         schedule(ID, _, _, _, Duration, PeriodoSemestre)), ListaHoras), !, sum_list(ListaHoras, TotalHoras).
 
@@ -169,7 +169,7 @@ numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, Soma
     salas(TipoSala, Salas),
     findall(Horas, (eventSemester(Periodo, PeriodoSemestre),member(Sala, Salas),
         schedule(ID, DiaSemana, HoraInicio, HoraFim, _Duration, PeriodoSemestre),
-        event(ID, _NomeDisciplina, _Tipologia, _NumAlunos, Sala),
+        event(ID, _Class, _Tipologia, _NumAlunos, Sala),
         ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicio, HoraFim, Horas)), ListaHoras),
     sum_list(ListaHoras, SomaHoras).
 
