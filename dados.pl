@@ -116,18 +116,18 @@ O predicado evolucaoHorasCurso/2 encontra a evolucao das horas totais dum curso 
 evolucaoHorasCurso(Curso, Evolucao) true, se Evolucao for uma lista de tuplos da forma (Ano, Periodo, TotalHoras)
 ordenada ascendentemente por ano Ano e periodo Periodo e TotalHoras sendo as horas totais dum curso Curso num periodo Periodo dum ano Ano.
 */
-evolucaoHorasCurso(Degree, Evolucao) :-
-    evolucaoHorasCursoPorLista([1, 2, 3], Degree, EvolucaoEmListas), append(EvolucaoEmListas, Evolucao).
+degreeDurationChange(Degree, Change) :-
+    degreeDurationChanges([1, 2, 3], Degree, Changes), append(Changes, Change).
 
 % O predicado evolucaoHorasCursoPorLista/3, ou evolucaoHorasCursoPorLista([1, 2, 3], Curso, EvolucaoEmListas),
 % encontra a evolucao das horas totais dum curso Curso a cada periodo Periodo de um ano Ano, organizando-as
 % numa lista de listas de tuplos da forma (Ano, Periodo, TotalHoras) ordenada ascendentemente por ano
 % Ano, periodo Periodo e TotalHoras sendo as horas totais dum curso num periodo Periodo dum ano Ano.
-evolucaoHorasCursoPorLista([], _, []).
-evolucaoHorasCursoPorLista([Year | RestoAnos], Degree, [EvolucaoAnual | RestoEvolucao]) :-
+degreeDurationChanges([], _, []).
+degreeDurationChanges([Year | RestoAnos], Degree, [EvolucaoAnual | RestoEvolucao]) :-
     horasCursoAnual(Degree, Year, ListaTotalHorasAnual),
     evolucaoAnual(Year, ListaTotalHorasAnual, Degree, EvolucaoAnual),
-    evolucaoHorasCursoPorLista(RestoAnos, Degree, RestoEvolucao).
+    degreeDurationChanges(RestoAnos, Degree, RestoEvolucao).
 
 % O predicado horasCursoAnual/3, ou horasCursoAnual(Curso, Ano, ListaTotalHorasAnual), encontra as
 % horas totais, organizando-as numa lista ListaTotalHorasAnual, dum curso Curso a cada periodo dum ano Ano.
