@@ -124,21 +124,21 @@ degreeDurationChange(Degree, Change) :-
 % numa lista de listas de tuplos da forma (Ano, Periodo, TotalHoras) ordenada ascendentemente por ano
 % Ano, periodo Periodo e TotalHoras sendo as horas totais dum curso num periodo Periodo dum ano Ano.
 degreeDurationChanges([], _, []).
-degreeDurationChanges([Year | RestoAnos], Degree, [EvolucaoAnual | RestoEvolucao]) :-
-    horasCursoAnual(Degree, Year, ListaTotalHorasAnual),
-    evolucaoAnual(Year, ListaTotalHorasAnual, Degree, EvolucaoAnual),
-    degreeDurationChanges(RestoAnos, Degree, RestoEvolucao).
+degreeDurationChanges([Year | OtherYears], Degree, [AnnualChanges | OtherAnnualChanges]) :-
+    annualDegreeDuration(Degree, Year, AnnualDurations),
+    annualDegreeChanges(Year, AnnualDurations, Degree, AnnualChanges),
+    degreeDurationChanges(OtherYears, Degree, OtherAnnualChanges).
 
 % O predicado horasCursoAnual/3, ou horasCursoAnual(Curso, Ano, ListaTotalHorasAnual), encontra as
 % horas totais, organizando-as numa lista ListaTotalHorasAnual, dum curso Curso a cada periodo dum ano Ano.
-horasCursoAnual(Degree, Year, ListaTotalHorasAnual) :-
+annualDegreeDuration(Degree, Year, AnnualDurations) :-
     findall(TotalHorasPeriodo, (member(Periodo, [p1, p2, p3, p4]), degreeDuration(Periodo, Degree, Year, TotalHorasPeriodo)), ListaTotalHorasAnual).
 
 % O predicado evolucaoAnual/4, ou evolucaoAnual(Ano, ListaTotalHorasAnual, Curso, EvolucaoAnual),
 % organiza a evolucao das horas totais duma lista ListaTotalHorasAnual dum curso Curso por periodo dum ano Ano.
-evolucaoAnual(Year, [TotalHorasPeriodo1, TotalHorasPeriodo2, TotalHorasPeriodo3, TotalHorasPeriodo4], _, EvolucaoAnual) :-
+annualDegreeChanges(Year, [TotalHorasPeriodo1, TotalHorasPeriodo2, TotalHorasPeriodo3, TotalHorasPeriodo4], _, AnnualChanges) :-
     append([[(Year, p1, TotalHorasPeriodo1)], [(Year, p2, TotalHorasPeriodo2)],
-        [(Year, p3, TotalHorasPeriodo3)], [(Year, p4, TotalHorasPeriodo4)]], EvolucaoAnual).
+        [(Year, p3, TotalHorasPeriodo3)], [(Year, p4, TotalHorasPeriodo4)]], AnnualChanges).
 
 /*
 O predicado ocupaSlot/5 calcula as horais sobrepostas entre um evento e um slot. Sendo
