@@ -125,20 +125,20 @@ degreeDurationChange(Degree, Change) :-
 % Ano, periodo Periodo e TotalHoras sendo as horas totais dum curso num periodo Periodo dum ano Ano.
 degreeDurationChanges([], _, []).
 degreeDurationChanges([Year | OtherYears], Degree, [AnnualChanges | OtherAnnualChanges]) :-
-    annualDegreeDuration(Degree, Year, AnnualDurations),
-    annualDegreeChanges(Year, AnnualDurations, Degree, AnnualChanges),
+    yearDegreeDuration(Degree, Year, YearDurations),
+    yearDegreeChanges(Year, YearDurations, Degree, AnnualChanges),
     degreeDurationChanges(OtherYears, Degree, OtherAnnualChanges).
 
 % O predicado horasCursoAnual/3, ou horasCursoAnual(Curso, Ano, ListaTotalHorasAnual), encontra as
 % horas totais, organizando-as numa lista ListaTotalHorasAnual, dum curso Curso a cada periodo dum ano Ano.
-annualDegreeDuration(Degree, Year, AnnualDurations) :-
-    findall(TotalHorasPeriodo, (member(Periodo, [p1, p2, p3, p4]), degreeDuration(Periodo, Degree, Year, TotalHorasPeriodo)), ListaTotalHorasAnual).
+yearDegreeDuration(Degree, Year, YearDurations) :-
+    findall(PeriodDuration, (member(Period, [p1, p2, p3, p4]), degreeDuration(Period, Degree, Year, PeriodDuration)), YearDurations).
 
 % O predicado evolucaoAnual/4, ou evolucaoAnual(Ano, ListaTotalHorasAnual, Curso, EvolucaoAnual),
 % organiza a evolucao das horas totais duma lista ListaTotalHorasAnual dum curso Curso por periodo dum ano Ano.
-annualDegreeChanges(Year, [TotalHorasPeriodo1, TotalHorasPeriodo2, TotalHorasPeriodo3, TotalHorasPeriodo4], _, AnnualChanges) :-
-    append([[(Year, p1, TotalHorasPeriodo1)], [(Year, p2, TotalHorasPeriodo2)],
-        [(Year, p3, TotalHorasPeriodo3)], [(Year, p4, TotalHorasPeriodo4)]], AnnualChanges).
+yearDegreeChanges(Year, [P1Duration, P2Duration, P3Duration, P4Duration], _, AnnualChanges) :-
+    append([[(Year, p1, P1Duration)], [(Year, p2, P2Duration)],
+        [(Year, p3, P3Duration)], [(Year, p4, P4Duration)]], AnnualChanges).
 
 /*
 O predicado ocupaSlot/5 calcula as horais sobrepostas entre um evento e um slot. Sendo
@@ -165,9 +165,9 @@ O predicado numHorasOcupadas/6 calcula as horas ocupadas em salas dum tipo num i
 periodo. Sendo numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras) true, se SomaHoras forem as
 horas ocupadas nas salas do tipo TipoSala, entre as horas HoraInicio e HoraFim, num dia de semana DiaSemana dum periodo Periodo.
 */
-numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, SomaHoras):-
+numHorasOcupadas(Period, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, SomaHoras):-
     salas(TipoSala, Salas),
-    findall(Horas, (eventSemester(Periodo, PeriodSemester),member(Sala, Salas),
+    findall(Horas, (eventSemester(Period, PeriodSemester),member(Sala, Salas),
         schedule(ID, DiaSemana, HoraInicio, HoraFim, _Duration, PeriodSemester),
         event(ID, _Class, _Tipologia, _NumAlunos, Sala),
         ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicio, HoraFim, Horas)), Durations),
@@ -194,8 +194,8 @@ de tuplos casosCriticos(DiaSemana, TipoSala, Percentagem) com um dia de semana D
 percentagem Percentagem de ocupacao arredondada acima dum valor critico Threshold, entre as horas HoraInicio e HoraFim.
 */
 ocupacaoCritica(HoraInicio, HoraFim, Threshold, Resultados) :-
-    findall(casosCriticos(DiaSemana, TipoSala, PercentagemInt), (salas(TipoSala, _), schedule(_, DiaSemana, _, _, _, Periodo),
-        numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras), ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max),
+    findall(casosCriticos(DiaSemana, TipoSala, PercentagemInt), (salas(TipoSala, _), schedule(_, DiaSemana, _, _, _, Period),
+        numHorasOcupadas(Period, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras), ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max),
         percentagem(SomaHoras, Max, PercentagemFloat), PercentagemFloat > Threshold, ceiling(PercentagemFloat, PercentagemInt)), ResultadosAux),
     sort(ResultadosAux, Resultados).
     
