@@ -145,47 +145,47 @@ O predicado ocupaSlot/5 calcula as horais sobrepostas entre um evento e um slot.
 ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) true, se Horas forem as horas sobrepostas
 entre um evento com entre as horas HoraInicioEvento e HoraFimEvento, e um slot entre a horas HoraInicioDada e HoraFimDada.
 */
-ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) :-
-    HoraInicioDada =< HoraInicioEvento, HoraFimDada > HoraInicioEvento,
-    HoraFimDada =< HoraFimEvento, !, Horas is HoraFimDada - HoraInicioEvento.
-ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) :-
-    HoraFimDada >= HoraFimEvento, HoraInicioDada < HoraFimEvento,
-    HoraInicioDada > HoraInicioEvento, !, Horas is HoraFimEvento - HoraInicioDada.
-ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) :-
-    HoraInicioDada =< HoraInicioEvento, HoraFimDada >= HoraFimEvento, !,
-    Horas is HoraFimEvento - HoraInicioEvento.
-ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, Horas) :-
-    HoraInicioDada >= HoraInicioEvento, HoraFimDada =< HoraFimEvento, !,
-    Horas is HoraFimDada - HoraInicioDada.
-ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicioEvento, HoraFimEvento, _) :-
-    \+ (HoraFimDada =< HoraInicioEvento; HoraInicioDada >= HoraFimEvento).
+fillSlot(InitialTime, FinalTime, EventStart, EventEnd, Duration) :-
+    InitialTime =< EventStart, FinalTime > EventStart,
+    FinalTime =< EventEnd, !, Duration is FinalTime - EventStart.
+fillSlot(InitialTime, FinalTime, EventStart, EventEnd, Duration) :-
+    FinalTime >= EventEnd, InitialTime < EventEnd,
+    InitialTime > EventStart, !, Duration is EventEnd - InitialTime.
+fillSlot(InitialTime, FinalTime, EventStart, EventEnd, Duration) :-
+    InitialTime =< EventStart, FinalTime >= EventEnd, !,
+    Duration is EventEnd - EventStart.
+fillSlot(InitialTime, FinalTime, EventStart, EventEnd, Duration) :-
+    InitialTime >= EventStart, FinalTime =< EventEnd, !,
+    Duration is FinalTime - InitialTime.
+fillSlot(InitialTime, FinalTime, EventStart, EventEnd, _) :-
+    \+ (FinalTime =< EventStart; InitialTime >= EventEnd).
 
 /*
 O predicado numHorasOcupadas/6 calcula as horas ocupadas em salas dum tipo num intervalo de tempo num dia de semana dum
 periodo. Sendo numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras) true, se SomaHoras forem as
 horas ocupadas nas salas do tipo TipoSala, entre as horas HoraInicio e HoraFim, num dia de semana DiaSemana dum periodo Periodo.
 */
-numHorasOcupadas(Period, TipoSala, DiaSemana, HoraInicioDada, HoraFimDada, SomaHoras):-
-    salas(TipoSala, Salas),
-    findall(Horas, (eventSemester(Period, PeriodSemester),member(Sala, Salas),
-        schedule(ID, DiaSemana, HoraInicio, HoraFim, _Duration, PeriodSemester),
-        event(ID, _Class, _Tipologia, _NumAlunos, Sala),
-        ocupaSlot(HoraInicioDada, HoraFimDada, HoraInicio, HoraFim, Horas)), Durations),
-    sum_list(Durations, SomaHoras).
+numHorasOcupadas(Period, RoomType, DiaSemana, InitialTime, FinalTime, SumDurations):-
+    rooms(RoomType, Rooms),
+    findall(Horas, (eventSemester(Period, PeriodSemester),member(Room, Rooms),
+        schedule(ID, DiaSemana, EventStart, EventEnd, _Duration, PeriodSemester),
+        event(ID, _Class, _Tipologia, _NumAlunos, Room),
+        fillSlot(InitialTime, FinalTime, EventStart, EventEnd, Horas)), Durations),
+    sum_list(Durations, SumDurations).
 
 /*
 O predicado ocupacaoMax/4 calcula as horas possiveis de serem ocupadas em salas dum tipo num
 intervalo de tempo. Sendo ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max) true, se Max forem as
 horas possiveis de serem ocupadas por salas do tipo TipoSala, entre as horas HoraInicio e HoraFim.
 */
-ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max) :-
-    salas(TipoSala, ListaSalas), length(ListaSalas, NumSalas), Max is NumSalas * (HoraFim - HoraInicio).
+maxCapacity(RoomType, EventStart, EventEnd, Max) :-
+    rooms(RoomType, Rooms), length(Rooms, NumRooms), Max is NumRooms * (EventEnd - EventStart).
 
 /*
 O predicado percentagem/3, ou percentagem(SomaHoras, Max, Percentagem), calcula a percentagem Percentagem entre as
 horas ocupadas SomaHoras e as possiveis Max em salas dum tipo num intervalo de tempo num dia de semana dum periodo.
 */
-percentagem(SomaHoras, Max, Percentagem) :- Percentagem is (SomaHoras / Max) * 100.
+percentage(SumDurations, Max, Percentage) :- Percentage is (SumDurations / Max) * 100.
 
 /*
 O predicado ocupacaoCritica/4 encontra casos de tipos de salas num dia de semana com um dado limite minimo de percentagem
@@ -193,9 +193,9 @@ de ocupacao. Sendo ocupacaoCritica(HoraInicio, HoraFim, Threshold, Resultados) t
 de tuplos casosCriticos(DiaSemana, TipoSala, Percentagem) com um dia de semana DiaSemana, um tipo de sala TipoSala e uma
 percentagem Percentagem de ocupacao arredondada acima dum valor critico Threshold, entre as horas HoraInicio e HoraFim.
 */
-ocupacaoCritica(HoraInicio, HoraFim, Threshold, Resultados) :-
-    findall(casosCriticos(DiaSemana, TipoSala, PercentagemInt), (salas(TipoSala, _), schedule(_, DiaSemana, _, _, _, Period),
-        numHorasOcupadas(Period, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras), ocupacaoMax(TipoSala, HoraInicio, HoraFim, Max),
-        percentagem(SomaHoras, Max, PercentagemFloat), PercentagemFloat > Threshold, ceiling(PercentagemFloat, PercentagemInt)), ResultadosAux),
-    sort(ResultadosAux, Resultados).
+ocupacaoCritica(EventStart, EventEnd, Threshold, Results) :-
+    findall(casosCriticos(DiaSemana, RoomType, PercentageInt), (rooms(RoomType, _), schedule(_, DiaSemana, _, _, _, Period),
+        numHorasOcupadas(Period, RoomType, DiaSemana, EventStart, EventEnd, SumDurations), maxCapacity(RoomType, EventStart, EventEnd, Max),
+        percentage(SumDurations, Max, PercentageFloat), PercentageFloat > Threshold, ceiling(PercentageFloat, PercentageInt)), ResultsAux),
+    sort(ResultsAux, Results).
     
