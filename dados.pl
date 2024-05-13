@@ -165,12 +165,12 @@ O predicado numHorasOcupadas/6 calcula as horas ocupadas em salas dum tipo num i
 periodo. Sendo numHorasOcupadas(Periodo, TipoSala, DiaSemana, HoraInicio, HoraFim, SomaHoras) true, se SomaHoras forem as
 horas ocupadas nas salas do tipo TipoSala, entre as horas HoraInicio e HoraFim, num dia de semana DiaSemana dum periodo Periodo.
 */
-numHorasOcupadas(Period, RoomType, DiaSemana, InitialTime, FinalTime, SumDurations):-
+reservedDurations(Period, RoomType, Weekday, InitialTime, FinalTime, SumDurations):-
     rooms(RoomType, Rooms),
-    findall(Horas, (eventSemester(Period, PeriodSemester),member(Room, Rooms),
-        schedule(ID, DiaSemana, EventStart, EventEnd, _Duration, PeriodSemester),
-        event(ID, _Class, _Tipologia, _NumAlunos, Room),
-        fillSlot(InitialTime, FinalTime, EventStart, EventEnd, Horas)), Durations),
+    findall(Durations, (eventSemester(Period, PeriodSemester), member(Room, Rooms),
+        schedule(ID, Weekday, EventStart, EventEnd, _, PeriodSemester),
+        event(ID, _, _, _, Room),
+        fillSlot(InitialTime, FinalTime, EventStart, EventEnd, Duration)), Durations),
     sum_list(Durations, SumDurations).
 
 /*
@@ -193,9 +193,8 @@ de ocupacao. Sendo ocupacaoCritica(HoraInicio, HoraFim, Threshold, Resultados) t
 de tuplos casosCriticos(DiaSemana, TipoSala, Percentagem) com um dia de semana DiaSemana, um tipo de sala TipoSala e uma
 percentagem Percentagem de ocupacao arredondada acima dum valor critico Threshold, entre as horas HoraInicio e HoraFim.
 */
-ocupacaoCritica(EventStart, EventEnd, Threshold, Results) :-
-    findall(casosCriticos(DiaSemana, RoomType, PercentageInt), (rooms(RoomType, _), schedule(_, DiaSemana, _, _, _, Period),
-        numHorasOcupadas(Period, RoomType, DiaSemana, EventStart, EventEnd, SumDurations), maxCapacity(RoomType, EventStart, EventEnd, Max),
+criticalCapacity(EventStart, EventEnd, Threshold, Results) :-
+    findall(criticalCases(Weekday, RoomType, PercentageInt), (rooms(RoomType, _), schedule(_, Weekday, _, _, _, Period),
+        reservedDurations(Period, RoomType, Weekday, EventStart, EventEnd, SumDurations), maxCapacity(RoomType, EventStart, EventEnd, Max),
         percentage(SumDurations, Max, PercentageFloat), PercentageFloat > Threshold, ceiling(PercentageFloat, PercentageInt)), ResultsAux),
     sort(ResultsAux, Results).
-    
