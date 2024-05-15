@@ -1,1 +1,3 @@
 *.pl linguist-language=Prolog
+
+data.pl linguist-vendored
