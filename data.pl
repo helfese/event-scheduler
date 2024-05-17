@@ -215,88 +215,88 @@ event(47, 'technology and society', theory, 100, a2).
 schedule(47, wednesday, 16.0, 18.0, 2.0, p2).
 event(48, 'technology and society', seminar, 25, '0-75').
 schedule(48, thursday, 13.0, 14.5, 1.5, p2).
-event(49, ‘computer networks’, laboratory, 25, '0-25').
+event(49, 'computer networks', laboratory, 25, '0-25').
 schedule(49, monday, 11.0, 12.5, 1.5, undefined).
 shift(49, 'leic-t', 3, leic-t0302).
-event(50, ‘computer networks’, laboratory, 25, '1-17').
+event(50, 'computer networks', laboratory, 25, '1-17').
 schedule(50, monday, 11.0, 12.5, 1.5, p2).
 shift(50, 'leic-t', 3, leic-t0302).
-event(51, ‘computer networks’, laboratory, 25, '1-17').
+event(51, 'computer networks', laboratory, 25, '1-17').
 schedule(51, wednesday, 11.0, 12.5, 1.5, p2).
 shift(51, 'leic-t', 3, leic-t0302).
-event(52, ‘computer networks’, laboratory, 24, '0-15').
+event(52, 'computer networks', laboratory, 24, '0-15').
 schedule(52, tuesday, 8.0, 9.5, 1.5, undefined).
 shift(52, 'leic-t', 3, leic-t0304).
-event(53, ‘computer networks’, laboratory, 24, '1-17').
+event(53, 'computer networks', laboratory, 24, '1-17').
 schedule(53, friday, 9.0, 10.5, 1.5, p2).
 shift(53, 'leic-t', 3, leic-t0304).
-event(54, ‘computer networks’, laboratory, 24, '1-17').
+event(54, 'computer networks', laboratory, 24, '1-17').
 schedule(54, tuesday, 8.0, 9.5, 1.5, p2).
 shift(54, 'leic-t', 3, leic-t0304).
-event(55, ‘computer networks’, laboratory, 29, '0-17').
+event(55, 'computer networks', laboratory, 29, '0-17').
 schedule(55, tuesday, 8.0, 9.5, 1.5, undefined).
 shift(55, 'leic-t', 3, leic-t0301).
-event(56, ‘computer networks’, laboratory, 29, '0-14').
+event(56, 'computer networks', laboratory, 29, '0-14').
 schedule(56, friday, 9.0, 10.5, 1.5, p2).
 shift(56, 'leic-t', 3, leic-t0301).
-event(57, ‘computer networks’, laboratory, 29, '1-19').
+event(57, 'computer networks', laboratory, 29, '1-19').
 schedule(57, tuesday, 8.0, 9.5, 1.5, p2).
 shift(57, 'leic-t', 3, leic-t0301).
-event(58, ‘computer networks’, theory, 101, a3).
+event(58, 'computer networks', theory, 101, a3).
 schedule(58, wednesday, 8.0, 9.0, 1.0, p2).
 shift(58, 'leic-t', 3, leic-t0302).
 shift(58, 'leic-t', 3, leic-t0301).
 shift(58, 'leic-t', 3, leic-t0304).
 shift(58, 'leic-t', 3, leic-t0303).
-event(59, ‘computer networks’, theory, 101, a3).
+event(59, 'computer networks', theory, 101, a3).
 schedule(59, monday, 8.0, 9.0, 1.0, p2).
 shift(59, 'leic-t', 3, leic-t0302).
 shift(59, 'leic-t', 3, leic-t0301).
 shift(59, 'leic-t', 3, leic-t0304).
 shift(59, 'leic-t', 3, leic-t0303).
-event(60, ‘computer networks’, theory, 101, a4).
+event(60, 'computer networks', theory, 101, a4).
 schedule(60, friday, 8.0, 9.0, 1.0, p2).
 shift(60, 'leic-t', 3, leic-t0302).
 shift(60, 'leic-t', 3, leic-t0301).
 shift(60, 'leic-t', 3, leic-t0304).
 shift(60, 'leic-t', 3, leic-t0303).
-event(61, ‘computer networks’, theory, 101, a2).
+event(61, 'computer networks', theory, 101, a2).
 schedule(61, tuesday, 9.5, 10.5, 1.0, p2).
 shift(61, 'leic-t', 3, leic-t0302).
 shift(61, 'leic-t', 3, leic-t0301).
 shift(61, 'leic-t', 3, leic-t0304).
 shift(61, 'leic-t', 3, leic-t0303).
-event(62, ‘computer networks’, laboratory, 25, '1-19').
+event(62, 'computer networks', laboratory, 25, '1-19').
 schedule(62, wednesday, 11.0, 12.5, 1.5, p2).
 shift(62, 'leic-t', 3, leic-t0303).
-event(63, ‘computer networks’, laboratory, 25, '1-19').
+event(63, 'computer networks', laboratory, 25, '1-19').
 schedule(63, monday, 11.0, 12.5, 1.5, p2).
 shift(63, 'leic-t', 3, leic-t0303).
 event(64, 'design and implementation of filters', theory, 0, '1-12').
 schedule(64, wednesday, 17.0, 18.5, 1.5, p1).
-event(65, ‘physics ii’, 'theoretical-practical', 40, '0-15').
+event(65, 'physics ii', 'theoretical-practical', 40, '0-15').
 schedule(65, tuesday, 14.0, 15.5, 1.5, p1).
 shift(65, 'leic-t', 2, leic-t0206).
 shift(65, 'leic-t', 2, leic-t0202).
-event(66, ‘physics ii’, 'theoretical-practical', 40, '0-16').
+event(66, 'physics ii', 'theoretical-practical', 40, '0-16').
 schedule(66, monday, 14.0, 15.5, 1.5, p1).
 shift(66, 'leic-t', 2, leic-t0206).
 shift(66, 'leic-t', 2, leic-t0202).
-event(67, ‘physics ii’, 'theoretical-practical', 38, '0-9').
+event(67, 'physics ii', 'theoretical-practical', 38, '0-9').
 schedule(67, monday, 15.5, 17.0, 1.5, p1).
 shift(67, 'leic-t', 2, leic-t0201).
-event(68, ‘physics ii’, 'theoretical-practical', 38, '0-16').
+event(68, 'physics ii', 'theoretical-practical', 38, '0-16').
 schedule(68, tuesday, 16.5, 18.0, 1.5, p1).
 shift(68, 'leic-t', 2, leic-t0201).
-event(69, ‘physics ii’, 'theoretical-practical', 25, '0-9').
+event(69, 'physics ii', 'theoretical-practical', 25, '0-9').
 schedule(69, monday, 14.0, 15.5, 1.5, p1).
 shift(69, 'leic-t', 2, leic-t0205).
 shift(69, 'leic-t', 2, leic-t0203).
-event(70, ‘physics ii’, 'theoretical-practical', 25, '0-9').
+event(70, 'physics ii', 'theoretical-practical', 25, '0-9').
 schedule(70, thursday, 15.5, 17.0, 1.5, p1).
 shift(70, 'leic-t', 2, leic-t0205).
 shift(70, 'leic-t', 2, leic-t0203).
-event(71, ‘physics ii’, theory, 122, a1).
+event(71, 'physics ii', theory, 122, a1).
 schedule(71, wednesday, 15.5, 17.5, 2.0, p1).
 shift(71, 'leic-t', 2, leic-t0206).
 shift(71, 'leic-t', 2, leic-t0205).
@@ -304,7 +304,7 @@ shift(71, 'leic-t', 2, leic-t0202).
 shift(71, 'leic-t', 2, leic-t0204).
 shift(71, 'leic-t', 2, leic-t0201).
 shift(71, 'leic-t', 2, leic-t0203).
-event(72, ‘physics ii’, theory, 122, a2).
+event(72, 'physics ii', theory, 122, a2).
 schedule(72, friday, 16.5, 18.5, 2.0, p1).
 shift(72, 'leic-t', 2, leic-t0206).
 shift(72, 'leic-t', 2, leic-t0205).
@@ -312,30 +312,30 @@ shift(72, 'leic-t', 2, leic-t0202).
 shift(72, 'leic-t', 2, leic-t0204).
 shift(72, 'leic-t', 2, leic-t0201).
 shift(72, 'leic-t', 2, leic-t0203).
-event(73, ‘physics ii’, 'theoretical-practical', 17, '1-11').
+event(73, 'physics ii', 'theoretical-practical', 17, '1-11').
 schedule(73, monday, 15.5, 17.0, 1.5, p1).
 shift(73, 'leic-t', 2, leic-t0204).
-event(74, ‘physics ii’, 'theoretical-practical', 17, '0-15').
+event(74, 'physics ii', 'theoretical-practical', 17, '0-15').
 schedule(74, tuesday, 16.5, 18.0, 1.5, p1).
 shift(74, 'leic-t', 2, leic-t0204).
-event(75, ‘applications and computing for the internet of things’, theory, 17, '0-19').
+event(75, 'applications and computing for the internet of things', theory, 17, '0-19').
 schedule(75, tuesday, 13.5, 15.5, 2.0, p2).
 shift(75, meti, 1, merc0101).
 shift(75, 'meic-t', 1, meic-t0101).
-event(76, ‘applications and computing for the internet of things’, theory, 17, '0-19').
+event(76, 'applications and computing for the internet of things', theory, 17, '0-19').
 schedule(76, wednesday, 9.5, 11.5, 2.0, p2).
 shift(76, meti, 1, merc0101).
 shift(76, 'meic-t', 1, meic-t0101).
-event(77, ‘applications and computing for the internet of things’, laboratory, 19, '1-17').
+event(77, 'applications and computing for the internet of things', laboratory, 19, '1-17').
 schedule(77, tuesday, 15.5, 18.5, 3.0, p2).
 shift(77, meti, 1, merc0101).
 shift(77, 'meic-t', 1, meic-t0101).
-event(78, ‘differential and integral calculus i’, 'theoretical-practical', 86, a1).
+event(78, 'differential and integral calculus i', 'theoretical-practical', 86, a1).
 schedule(78, wednesday, 8.0, 10.0, 2.0, p1_2).
 shift(78, leti, 1, leti0103).
 shift(78, leti, 1, leti0102).
 shift(78, leti, 1, leti0101).
-event(79, ‘differential and integral calculus i’, 'theoretical-practical', 86, a2).
+event(79, 'differential and integral calculus i', 'theoretical-practical', 86, a2).
 schedule(79, friday, 8.0, 10.0, 2.0, p1_2).
 shift(79, leti, 1, leti0103).
 shift(79, leti, 1, leti0102).
@@ -346,121 +346,121 @@ shift(80, mee, 1, mee0101).
 event(81, 'cross-cutting skills mee ii', seminar, 14, '1-3').
 schedule(81, friday, 16.0, 18.0, 2.0, p2).
 shift(81, mee, 1, mee0101).
-event(82, ‘multivariate statistical methods for engineering and management’, problems, 30, '0-15').
+event(82, 'multivariate statistical methods for engineering and management', problems, 30, '0-15').
 schedule(82, wednesday, 11.5, 13.0, 1.5, p1).
 shift(82, megi, 2, megi0202).
 shift(82, megi, 2, megi0201).
-event(83, ‘multivariate statistical methods for engineering and management’, problems, 30, '0-16').
+event(83, 'multivariate statistical methods for engineering and management', problems, 30, '0-16').
 schedule(83, wednesday, 11.5, 13.0, 1.5, p2).
 shift(83, megi, 2, megi0202).
 shift(83, megi, 2, megi0201).
-event(84, ‘multivariate statistical methods for engineering and management’, theory, 30, '0-16').
+event(84, 'multivariate statistical methods for engineering and management', theory, 30, '0-16').
 schedule(84, wednesday, 9.0, 11.0, 2.0, p1_2).
 shift(84, megi, 2, megi0202).
 shift(84, megi, 2, megi0201).
-event(85, ‘physics i’, 'theoretical-practical', 7, '0-15').
+event(85, 'physics i', 'theoretical-practical', 7, '0-15').
 schedule(85, wednesday, 14.0, 15.5, 1.5, p1).
 shift(85, legi, 2, legi0205).
 shift(85, legi, 2, legi0202).
 shift(85, legi, 2, legi0204).
 shift(85, legi, 2, legi0201).
 shift(85, legi, 2, legi0203).
-event(86, ‘physics i’, 'theoretical-practical', 2, '0-15').
+event(86, 'physics i', 'theoretical-practical', 2, '0-15').
 schedule(86, thursday, 17.5, 19.0, 1.5, p1).
 shift(86, legi, 2, legi0205).
 shift(86, legi, 2, legi0202).
 shift(86, legi, 2, legi0204).
 shift(86, legi, 2, legi0201).
 shift(86, legi, 2, legi0203).
-event(87, ‘physics i’, theory, 9, a3).
+event(87, 'physics i', theory, 9, a3).
 schedule(87, monday, 18.0, 20.0, 2.0, p1).
 shift(87, legi, 2, legi0205).
 shift(87, legi, 2, legi0202).
 shift(87, legi, 2, legi0204).
 shift(87, legi, 2, legi0201).
 shift(87, legi, 2, legi0203).
-event(88, ‘physics i’, theory, 9, NoRoom).
+event(88, 'physics i', theory, 9, NoRoom).
 schedule(88, tuesday, 14.0, 16.0, 2.0, p1).
 shift(88, legi, 2, legi0205).
 shift(88, legi, 2, legi0202).
 shift(88, legi, 2, legi0204).
 shift(88, legi, 2, legi0201).
 shift(88, legi, 2, legi0203).
-event(89, ‘complements of operational research’, 'theoretical-practical', 51, a1).
+event(89, 'complements of operational research', 'theoretical-practical', 51, a1).
 schedule(89, thursday, 15.0, 17.0, 2.0, p1).
 shift(89, megi, 1, megi0101).
 shift(89, megi, 1, megi0103).
-event(90, ‘complements of operational research’, 'theoretical-practical', 51, a3).
+event(90, 'complements of operational research', 'theoretical-practical', 51, a3).
 schedule(90, friday, 13.0, 15.0, 2.0, p1).
 shift(90, megi, 1, megi0101).
 shift(90, megi, 1, megi0103).
-event(91, ‘complements of operational research’, 'theoretical-practical', 51, a5).
+event(91, 'complements of operational research', 'theoretical-practical', 51, a5).
 schedule(91, monday, 17.5, 19.5, 2.0, p1).
 shift(91, megi, 1, megi0101).
 shift(91, megi, 1, megi0103).
-event(92, ‘complements of operational research’, 'theoretical-practical', 25, a3).
+event(92, 'complements of operational research', 'theoretical-practical', 25, a3).
 schedule(92, thursday, 17.0, 19.0, 2.0, p1).
 shift(92, megi, 1, megi0102).
-event(93, ‘complements of operational research’, 'theoretical-practical', 25, '0-9').
+event(93, 'complements of operational research', 'theoretical-practical', 25, '0-9').
 schedule(93, friday, 15.0, 17.0, 2.0, p1).
 shift(93, megi, 1, megi0102).
-event(94, ‘complements of operational research’, 'theoretical-practical', 25, a1).
+event(94, 'complements of operational research', 'theoretical-practical', 25, a1).
 schedule(94, monday, 13.5, 15.5, 2.0, p1).
 shift(94, megi, 1, megi0102).
-event(95, ‘linear algebra’, 'theoretical-practical', 54, a5).
+event(95, 'linear algebra', 'theoretical-practical', 54, a5).
 schedule(95, tuesday, 11.5, 13.5, 2.0, p2).
 shift(95, 'leic-t', 1, leic-t0104).
 shift(95, 'leic-t', 1, leic-t0102).
 shift(95, 'leic-t', 1, leic-t0106).
-event(96, ‘linear algebra’, 'theoretical-practical', 54, a5).
+event(96, 'linear algebra', 'theoretical-practical', 54, a5).
 schedule(96, friday, 10.0, 12.0, 2.0, p1_2).
 shift(96, 'leic-t', 1, leic-t0104).
 shift(96, 'leic-t', 1, leic-t0102).
 shift(96, 'leic-t', 1, leic-t0106).
-event(97, ‘linear algebra’, 'theoretical-practical', 54, a5).
+event(97, 'linear algebra', 'theoretical-practical', 54, a5).
 schedule(97, wednesday, 10.5, 12.5, 2.0, p1).
 shift(97, 'leic-t', 1, leic-t0104).
 shift(97, 'leic-t', 1, leic-t0102).
 shift(97, 'leic-t', 1, leic-t0106).
-event(98, ‘linear algebra’, 'theoretical-practical', 59, '1-2').
+event(98, 'linear algebra', 'theoretical-practical', 59, '1-2').
 schedule(98, tuesday, 8.0, 10.0, 2.0, p1).
 shift(98, 'leic-t', 1, leic-t0107).
 shift(98, 'leic-t', 1, leic-t0105).
 shift(98, 'leic-t', 1, leic-t0103).
 shift(98, 'leic-t', 1, leic-t0101).
-event(99, ‘linear algebra’, 'theoretical-practical', 59, '1-22').
+event(99, 'linear algebra', 'theoretical-practical', 59, '1-22').
 schedule(99, monday, 8.0, 10.0, 2.0, p1_2).
 shift(99, 'leic-t', 1, leic-t0107).
 shift(99, 'leic-t', 1, leic-t0105).
 shift(99, 'leic-t', 1, leic-t0103).
 shift(99, 'leic-t', 1, leic-t0101).
-event(100, ‘linear algebra’, 'theoretical-practical', 59, '1-22').
+event(100, 'linear algebra', 'theoretical-practical', 59, '1-22').
 schedule(100, tuesday, 8.0, 10.0, 2.0, p1_2).
 shift(100, 'leic-t', 1, leic-t0107).
 shift(100, 'leic-t', 1, leic-t0105).
 shift(100, 'leic-t', 1, leic-t0103).
 shift(100, 'leic-t', 1, leic-t0101).
-event(101, ‘information processing and retrieval’, laboratory, 3, '1-17').
+event(101, 'information processing and retrieval', laboratory, 3, '1-17').
 schedule(101, wednesday, 16.0, 17.5, 1.5, p1).
 shift(101, meti, 1, merc0101).
 shift(101, 'meic-t', 1, meic-t0101).
-event(102, ‘information processing and retrieval’, laboratory, 3, '1-15').
+event(102, 'information processing and retrieval', laboratory, 3, '1-15').
 schedule(102, tuesday, 13.0, 14.5, 1.5, p1).
 shift(102, meti, 1, merc0101).
 shift(102, 'meic-t', 1, meic-t0101).
-event(103, ‘information processing and retrieval’, laboratory, 4, '1-17').
+event(103, 'information processing and retrieval', laboratory, 4, '1-17').
 schedule(103, monday, 12.0, 13.5, 1.5, p1).
 shift(103, meti, 1, merc0101).
 shift(103, 'meic-t', 1, meic-t0101).
-event(104, ‘information processing and retrieval’, laboratory, 4, '1-15').
+event(104, 'information processing and retrieval', laboratory, 4, '1-15').
 schedule(104, friday, 11.0, 12.5, 1.5, p1).
 shift(104, meti, 1, merc0101).
 shift(104, 'meic-t', 1, meic-t0101).
-event(105, ‘information processing and retrieval’, theory, 10, '0-19').
+event(105, 'information processing and retrieval', theory, 10, '0-19').
 schedule(105, monday, 18.0, 20.0, 2.0, p1).
 shift(105, meti, 1, merc0101).
 shift(105, 'meic-t', 1, meic-t0101).
-event(106, ‘information processing and retrieval’, theory, 10, '0-19').
+event(106, 'information processing and retrieval', theory, 10, '0-19').
 schedule(106, wednesday, 10.5, 12.5, 2.0, p1).
 shift(106, meti, 1, merc0101).
 shift(106, 'meic-t', 1, meic-t0101).
@@ -474,22 +474,22 @@ schedule(108, thursday, 10.0, 11.5, 1.5, p1).
 shift(108, leti, 1, leti0103).
 shift(108, leti, 1, leti0102).
 shift(108, leti, 1, leti0101).
-event(109, ‘natural language’, laboratory, 15, '0-15').
+event(109, 'natural language', laboratory, 15, '0-15').
 schedule(109, monday, 8.0, 9.5, 1.5, p1).
 shift(109, 'meic-t', 1, meic-t0101).
-event(110, ‘natural language’, laboratory, 15, '0-15').
+event(110, 'natural language', laboratory, 15, '0-15').
 schedule(110, friday, 11.0, 12.5, 1.5, p1).
 shift(110, 'meic-t', 1, meic-t0101).
-event(111, ‘natural language’, laboratory, 18, '0-16').
+event(111, 'natural language', laboratory, 18, '0-16').
 schedule(111, monday, 12.5, 14.0, 1.5, p1).
 shift(111, 'meic-t', 1, meic-t0101).
-event(112, ‘natural language’, laboratory, 18, '0-15').
+event(112, 'natural language', laboratory, 18, '0-15').
 schedule(112, friday, 13.5, 15.0, 1.5, p1).
 shift(112, 'meic-t', 1, meic-t0101).
-event(113, ‘natural language’, theory, 30, '0-16').
+event(113, 'natural language', theory, 30, '0-16').
 schedule(113, monday, 9.5, 11.5, 2.0, p1).
 shift(113, 'meic-t', 1, meic-t0101).
-event(114, ‘natural language’, theory, 30, '0-16').
+event(114, 'natural language', theory, 30, '0-16').
 schedule(114, thursday, 13.5, 15.5, 2.0, p1).
 shift(114, 'meic-t', 1, meic-t0101).
 event(115, 'integrated electronic systems', laboratory, 5, '1-29').
@@ -504,29 +504,29 @@ shift(117, mee, 1, mee0101).
 event(118, 'integrated electronic systems', 'theoretical-practical', 5, '0-16').
 schedule(118, tuesday, 8.0, 10.0, 2.0, p1).
 shift(118, mee, 1, mee0101).
-event(119, ‘electromagnetism and optics’, 'theoretical-practical', 32, '0-17').
+event(119, 'electromagnetism and optics', 'theoretical-practical', 32, '0-17').
 schedule(119, tuesday, 15.5, 17.0, 1.5, p1).
 shift(119, leti, 2, leti0202).
 shift(119, leti, 2, leti0204).
-event(120, ‘electromagnetism and optics’, 'theoretical-practical', 32, '0-25').
+event(120, 'electromagnetism and optics', 'theoretical-practical', 32, '0-25').
 schedule(120, thursday, 15.0, 16.5, 1.5, p1).
 shift(120, leti, 2, leti0202).
 shift(120, leti, 2, leti0204).
-event(121, ‘electromagnetism and optics’, 'theoretical-practical', 35, '0-25').
+event(121, 'electromagnetism and optics', 'theoretical-practical', 35, '0-25').
 schedule(121, tuesday, 13.0, 14.5, 1.5, p1).
 shift(121, leti, 2, leti0201).
 shift(121, leti, 2, leti0203).
-event(122, ‘electromagnetism and optics’, 'theoretical-practical', 35, '0-25').
+event(122, 'electromagnetism and optics', 'theoretical-practical', 35, '0-25').
 schedule(122, wednesday, 16.5, 18.0, 1.5, p1).
 shift(122, leti, 2, leti0201).
 shift(122, leti, 2, leti0203).
-event(123, ‘electromagnetism and optics’, theory, 68, a4).
+event(123, 'electromagnetism and optics', theory, 68, a4).
 schedule(123, wednesday, 14.5, 16.5, 2.0, p1).
 shift(123, leti, 2, leti0201).
 shift(123, leti, 2, leti0203).
 shift(123, leti, 2, leti0202).
 shift(123, leti, 2, leti0204).
-event(124, ‘electromagnetism and optics’, theory, 68, a3).
+event(124, 'electromagnetism and optics', theory, 68, a3).
 schedule(124, monday, 15.0, 17.0, 2.0, p1).
 shift(124, leti, 2, leti0201).
 shift(124, leti, 2, leti0203).
@@ -563,78 +563,78 @@ shift(131, mee, 2, mee0201).
 event(132, 'project testing and reliability of electronic systems', laboratory, 5, '1-60').
 schedule(132, monday, 11.5, 13.0, 1.5, p2).
 shift(132, mee, 2, mee0201).
-event(133, ‘industrial management and environment’, practical, 30, '1-4').
+event(133, 'industrial management and environment', practical, 30, '1-4').
 schedule(133, wednesday, 10.0, 11.5, 1.5, p2).
 shift(133, legi, 3, legi0301).
 shift(133, legi, 3, legi0305).
 shift(133, legi, 3, legi0302).
-event(134, ‘industrial management and environment’, practical, 30, '1-22').
+event(134, 'industrial management and environment', practical, 30, '1-22').
 schedule(134, friday, 9.0, 10.5, 1.5, p2).
 shift(134, legi, 3, legi0301).
 shift(134, legi, 3, legi0305).
 shift(134, legi, 3, legi0302).
-event(135, ‘industrial management and environment’, theory, 69, a1).
+event(135, 'industrial management and environment', theory, 69, a1).
 schedule(135, monday, 12.0, 14.0, 2.0, p2).
 shift(135, legi, 3, legi0303).
 shift(135, legi, 3, legi0304).
 shift(135, legi, 3, legi0301).
 shift(135, legi, 3, legi0305).
 shift(135, legi, 3, legi0302).
-event(136, ‘industrial management and environment’, theory, 69, a1).
+event(136, 'industrial management and environment', theory, 69, a1).
 schedule(136, wednesday, 11.5, 13.5, 2.0, p2).
 shift(136, legi, 3, legi0303).
 shift(136, legi, 3, legi0304).
 shift(136, legi, 3, legi0301).
 shift(136, legi, 3, legi0305).
 shift(136, legi, 3, legi0302).
-event(137, ‘industrial management and environment’, practical, 35, '1-4').
+event(137, 'industrial management and environment', practical, 35, '1-4').
 schedule(137, friday, 10.5, 12.0, 1.5, p2).
 shift(137, legi, 3, legi0303).
 shift(137, legi, 3, legi0304).
-event(138, ‘industrial management and environment’, practical, 35, '0-75').
+event(138, 'industrial management and environment', practical, 35, '0-75').
 schedule(138, monday, 10.5, 12.0, 1.5, p2).
 shift(138, legi, 3, legi0303).
 shift(138, legi, 3, legi0304).
-event(139, ‘warehouse and materials management’, laboratory, 27, '0-15').
+event(139, 'warehouse and materials management', laboratory, 27, '0-15').
 schedule(139, wednesday, 16.0, 17.5, 1.5, p1).
 shift(139, megi, 2, megi0202).
-event(140, ‘warehouse and materials management’, laboratory, 27, '0-15').
+event(140, 'warehouse and materials management', laboratory, 27, '0-15').
 schedule(140, wednesday, 17.5, 19.0, 1.5, p1).
 shift(140, megi, 2, megi0202).
-event(141, ‘warehouse and materials management’, 'theoretical-practical', 55, a2).
+event(141, 'warehouse and materials management', 'theoretical-practical', 55, a2).
 schedule(141, monday, 14.5, 16.0, 1.5, p1).
 shift(141, megi, 2, megi0202).
 shift(141, megi, 2, megi0201).
-event(142, ‘warehouse and materials management’, 'theoretical-practical', 55, a3).
+event(142, 'warehouse and materials management', 'theoretical-practical', 55, a3).
 schedule(142, wednesday, 14.5, 16.0, 1.5, p1).
 shift(142, megi, 2, megi0202).
 shift(142, megi, 2, megi0201).
-event(143, ‘warehouse and materials management’, 'theoretical-practical', 55, '1-2').
+event(143, 'warehouse and materials management', 'theoretical-practical', 55, '1-2').
 schedule(143, monday, 14.5, 16.0, 1.5, p1).
 shift(143, megi, 2, megi0202).
 shift(143, megi, 2, megi0201).
-event(144, ‘warehouse and materials management’, laboratory, 26, '0-17').
+event(144, 'warehouse and materials management', laboratory, 26, '0-17').
 schedule(144, wednesday, 17.5, 19.0, 1.5, p1).
 shift(144, megi, 2, megi0201).
-event(145, ‘warehouse and materials management’, laboratory, 26, '0-17').
+event(145, 'warehouse and materials management', laboratory, 26, '0-17').
 schedule(145, wednesday, 16.0, 17.5, 1.5, p1).
 shift(145, megi, 2, megi0201).
-event(146, ‘data analysis and integration’, laboratory, 7, '0-21').
+event(146, 'data analysis and integration', laboratory, 7, '0-21').
 schedule(146, thursday, 14.0, 15.5, 1.5, p1).
 shift(146, 'meic-t', 1, meic-t0101).
-event(147, ‘data analysis and integration’, laboratory, 7, '0-14').
+event(147, 'data analysis and integration', laboratory, 7, '0-14').
 schedule(147, monday, 10.5, 12.0, 1.5, p1).
 shift(147, 'meic-t', 1, meic-t0101).
-event(148, ‘data analysis and integration’, theory, 32, '0-19').
+event(148, 'data analysis and integration', theory, 32, '0-19').
 schedule(148, monday, 14.0, 16.0, 2.0, p1).
 shift(148, 'meic-t', 1, meic-t0101).
-event(149, ‘data analysis and integration’, theory, 32, '0-19').
+event(149, 'data analysis and integration', theory, 32, '0-19').
 schedule(149, thursday, 10.0, 12.0, 2.0, p1).
 shift(149, 'meic-t', 1, meic-t0101).
-event(150, ‘data analysis and integration’, laboratory, 13, '1-29').
+event(150, 'data analysis and integration', laboratory, 13, '1-29').
 schedule(150, thursday, 14.0, 15.5, 1.5, p1).
 shift(150, 'meic-t', 1, meic-t0101).
-event(151, ‘data analysis and integration’, laboratory, 13, '1-19').
+event(151, 'data analysis and integration', laboratory, 13, '1-19').
 schedule(151, monday, 10.5, 12.0, 1.5, p1).
 shift(151, 'meic-t', 1, meic-t0101).
 event(152, management, practical, 33, '0-23').
@@ -750,78 +750,78 @@ shift(172, lee, 2, lee0201).
 event(173, 'introduction to economics', theory, 37, '1-24').
 schedule(173, wednesday, 10.5, 12.5, 2.0, p1).
 shift(173, lee, 2, lee0201).
-event(174, ‘machine learning’, laboratory, 14, '0-75').
+event(174, 'machine learning', laboratory, 14, '0-75').
 schedule(174, thursday, 11.0, 12.5, 1.5, p1).
 shift(174, 'leic-t', 3, leic-t0302).
-event(175, ‘machine learning’, laboratory, 14, '0-75').
+event(175, 'machine learning', laboratory, 14, '0-75').
 schedule(175, tuesday, 9.0, 10.5, 1.5, p1).
 shift(175, 'leic-t', 3, leic-t0302).
-event(176, ‘machine learning’, theory, 86, a1).
+event(176, 'machine learning', theory, 86, a1).
 schedule(176, thursday, 9.0, 11.0, 2.0, p1).
 shift(176, 'leic-t', 3, leic-t0302).
 shift(176, 'leic-t', 3, leic-t0301).
 shift(176, 'leic-t', 3, leic-t0304).
 shift(176, 'leic-t', 3, leic-t0303).
-event(177, ‘machine learning’, theory, 86, a2).
+event(177, 'machine learning', theory, 86, a2).
 schedule(177, monday, 10.5, 12.5, 2.0, p1).
 shift(177, 'leic-t', 3, leic-t0302).
 shift(177, 'leic-t', 3, leic-t0301).
 shift(177, 'leic-t', 3, leic-t0304).
 shift(177, 'leic-t', 3, leic-t0303).
-event(178, ‘machine learning’, laboratory, 17, '0-75').
+event(178, 'machine learning', laboratory, 17, '0-75').
 schedule(178, wednesday, 9.0, 10.5, 1.5, p1).
 shift(178, 'leic-t', 3, leic-t0301).
-event(179, ‘machine learning’, laboratory, 17, '1-15').
+event(179, 'machine learning', laboratory, 17, '1-15').
 schedule(179, monday, 9.0, 10.5, 1.5, p1).
 shift(179, 'leic-t', 3, leic-t0301).
-event(180, ‘machine learning’, laboratory, 23, '0-73').
+event(180, 'machine learning', laboratory, 23, '0-73').
 schedule(180, wednesday, 9.0, 10.5, 1.5, p1).
 shift(180, 'leic-t', 3, leic-t0303).
-event(181, ‘machine learning’, laboratory, 23, '1-11').
+event(181, 'machine learning', laboratory, 23, '1-11').
 schedule(181, monday, 9.0, 10.5, 1.5, p1).
 shift(181, 'leic-t', 3, leic-t0303).
-event(182, ‘machine learning’, laboratory, 33, '0-73').
+event(182, 'machine learning', laboratory, 33, '0-73').
 schedule(182, tuesday, 9.0, 10.5, 1.5, p1).
 shift(182, 'leic-t', 3, leic-t0304).
-event(183, ‘machine learning’, laboratory, 33, '0-73').
+event(183, 'machine learning', laboratory, 33, '0-73').
 schedule(183, thursday, 11.0, 12.5, 1.5, p1).
 shift(183, 'leic-t', 3, leic-t0304).
-event(184, ‘supply chain management’, practical, 37, '0-16').
+event(184, 'supply chain management', practical, 37, '0-16').
 schedule(184, thursday, 17.0, 18.5, 1.5, p1).
 shift(184, megi, 1, megi0101).
 shift(184, megi, 1, megi0102).
 shift(184, megi, 1, megi0103).
-event(185, ‘supply chain management’, practical, 37, '1-4').
+event(185, 'supply chain management', practical, 37, '1-4').
 schedule(185, monday, 14.0, 15.5, 1.5, p1).
 shift(185, megi, 1, megi0101).
 shift(185, megi, 1, megi0102).
 shift(185, megi, 1, megi0103).
-event(186, ‘supply chain management’, theory, 101, a1).
+event(186, 'supply chain management', theory, 101, a1).
 schedule(186, monday, 15.5, 17.5, 2.0, p1).
 shift(186, megi, 1, megi0101).
 shift(186, megi, 1, megi0102).
 shift(186, megi, 1, megi0103).
-event(187, ‘supply chain management’, theory, 101, a2).
+event(187, 'supply chain management', theory, 101, a2).
 schedule(187, thursday, 13.0, 15.0, 2.0, p1).
 shift(187, megi, 1, megi0101).
 shift(187, megi, 1, megi0102).
 shift(187, megi, 1, megi0103).
-event(188, ‘supply chain management’, practical, 24, '0-15').
+event(188, 'supply chain management', practical, 24, '0-15').
 schedule(188, tuesday, 10.0, 11.5, 1.5, p1).
 shift(188, megi, 1, megi0101).
 shift(188, megi, 1, megi0102).
 shift(188, megi, 1, megi0103).
-event(189, ‘supply chain management’, practical, 24, '0-75').
+event(189, 'supply chain management', practical, 24, '0-75').
 schedule(189, monday, 11.0, 12.5, 1.5, p1).
 shift(189, megi, 1, megi0101).
 shift(189, megi, 1, megi0102).
 shift(189, megi, 1, megi0103).
-event(190, ‘supply chain management’, practical, 39, '0-15').
+event(190, 'supply chain management', practical, 39, '0-15').
 schedule(190, thursday, 15.0, 16.5, 1.5, p1).
 shift(190, megi, 1, megi0101).
 shift(190, megi, 1, megi0102).
 shift(190, megi, 1, megi0103).
-event(191, ‘supply chain management’, practical, 39, NoRoom).
+event(191, 'supply chain management', practical, 39, NoRoom).
 schedule(191, monday, 17.5, 19.0, 1.5, p1).
 shift(191, megi, 1, megi0101).
 shift(191, megi, 1, megi0102).
@@ -859,82 +859,82 @@ shift(201, megi, 1, megi0102).
 event(202, 'models of systems simulation', 'theoretical-practical', 22, '0-25').
 schedule(202, tuesday, 17.5, 19.5, 2.0, p2).
 shift(202, megi, 1, megi0102).
-event(203, ‘project in operations and logistics’, laboratory, 3, '0-9').
+event(203, 'project in operations and logistics', laboratory, 3, '0-9').
 schedule(203, thursday, 14.0, 15.5, 1.5, p2).
 shift(203, megi, 2, megi0202).
 shift(203, megi, 2, megi0201).
-event(204, ‘project in operations and logistics’, problems, 0, '0-9').
+event(204, 'project in operations and logistics', problems, 0, '0-9').
 schedule(204, thursday, 15.5, 17.0, 1.5, p2).
 shift(204, megi, 2, megi0202).
 shift(204, megi, 2, megi0201).
-event(205, ‘project in operations and logistics’, 'theoretical-practical', 68, '0-65').
+event(205, 'project in operations and logistics', 'theoretical-practical', 68, '0-65').
 schedule(205, wednesday, 16.0, 17.5, 1.5, p2).
 shift(205, megi, 2, megi0202).
 shift(205, megi, 2, megi0201).
-event(206, ‘project in operations and logistics’, 'theoretical-practical', 68, '0-65').
+event(206, 'project in operations and logistics', 'theoretical-practical', 68, '0-65').
 schedule(206, wednesday, 14.5, 16.0, 1.5, p2).
 shift(206, megi, 2, megi0202).
 shift(206, megi, 2, megi0201).
-event(207, ‘project in operations and logistics’, laboratory, 20, '1-3').
+event(207, 'project in operations and logistics', laboratory, 20, '1-3').
 schedule(207, wednesday, 17.5, 19.0, 1.5, p2).
 shift(207, megi, 2, megi0202).
 shift(207, megi, 2, megi0201).
-event(208, ‘propagation and antennas’, problems, 31, '0-17').
+event(208, 'propagation and antennas', problems, 31, '0-17').
 schedule(208, monday, 16.0, 17.5, 1.5, p1).
 shift(208, leti, 3, leti0303).
 shift(208, leti, 3, leti0302).
 shift(208, leti, 3, leti0301).
-event(209, ‘propagation and antennas’, problems, 31, '0-17').
+event(209, 'propagation and antennas', problems, 31, '0-17').
 schedule(209, wednesday, 10.5, 12.0, 1.5, p1).
 shift(209, leti, 3, leti0303).
 shift(209, leti, 3, leti0302).
 shift(209, leti, 3, leti0301).
-event(210, ‘propagation and antennas’, laboratory, 19, '1-64').
+event(210, 'propagation and antennas', laboratory, 19, '1-64').
 schedule(210, monday, 16.0, 19.0, 3.0, p1).
 shift(210, leti, 3, leti0303).
 shift(210, leti, 3, leti0302).
 shift(210, leti, 3, leti0301).
-event(211, ‘propagation and antennas’, theory, 68, a4).
+event(211, 'propagation and antennas', theory, 68, a4).
 schedule(211, wednesday, 12.5, 14.5, 2.0, p1).
 shift(211, lee, 3, lee0301).
 shift(211, lee, 3, lee0302).
 shift(211, leti, 3, leti0303).
 shift(211, leti, 3, leti0302).
 shift(211, leti, 3, leti0301).
-event(212, ‘propagation and antennas’, theory, 68, a4).
+event(212, 'propagation and antennas', theory, 68, a4).
 schedule(212, friday, 13.0, 15.0, 2.0, p1).
 shift(212, lee, 3, lee0301).
 shift(212, lee, 3, lee0302).
 shift(212, leti, 3, leti0303).
 shift(212, leti, 3, leti0302).
 shift(212, leti, 3, leti0301).
-event(213, ‘propagation and antennas’, laboratory, 16, '1-64').
+event(213, 'propagation and antennas', laboratory, 16, '1-64').
 schedule(213, wednesday, 9.0, 12.0, 3.0, p1).
 shift(213, leti, 3, leti0303).
 shift(213, leti, 3, leti0302).
 shift(213, leti, 3, leti0301).
-event(214, ‘propagation and antennas’, laboratory, 21, '1-64').
+event(214, 'propagation and antennas', laboratory, 21, '1-64').
 schedule(214, wednesday, 16.0, 19.0, 3.0, p1).
 shift(214, lee, 3, lee0301).
 shift(214, lee, 3, lee0302).
 shift(214, leti, 3, leti0303).
 shift(214, leti, 3, leti0302).
 shift(214, leti, 3, leti0301).
-event(215, ‘propagation and antennas’, problems, 37, '1-24').
+event(215, 'propagation and antennas', problems, 37, '1-24').
 schedule(215, monday, 18.0, 19.5, 1.5, p1).
 shift(215, lee, 3, lee0301).
 shift(215, lee, 3, lee0302).
 shift(215, leti, 3, leti0303).
 shift(215, leti, 3, leti0302).
 shift(215, leti, 3, leti0301).
-event(216, ‘propagation and antennas’, problems, 37, '1-24').
+event(216, 'propagation and antennas', problems, 37, '1-24').
 schedule(216, wednesday, 8.0, 9.5, 1.5, p1).
 shift(216, lee, 3, lee0301).
 shift(216, lee, 3, lee0302).
 shift(216, leti, 3, leti0303).
 shift(216, leti, 3, leti0302).
 shift(216, leti, 3, leti0301).
-event(217, ‘propagation and antennas’, laboratory, 9, '1-64').
+event(217, 'propagation and antennas', laboratory, 9, '1-64').
 schedule(217, thursday, 14.0, 17.0, 3.0, p1).
 shift(217, lee, 3, lee0301).
 shift(217, lee, 3, lee0302).
@@ -961,63 +961,63 @@ event(222, 'cyber forensic security', laboratory, 24, '1-27').
 schedule(222, monday, 14.0, 17.0, 3.0, p1).
 shift(222, meti, 1, merc0101).
 shift(222, 'meic-t', 1, meic-t0101).
-event(223, ‘decision support models’, theory, 97, a3).
+event(223, 'decision support models', theory, 97, a3).
 schedule(223, wednesday, 12.5, 14.5, 2.0, p2).
 shift(223, megi, 1, megi0101).
 shift(223, megi, 1, megi0102).
 shift(223, megi, 1, megi0103).
-event(224, ‘decision support models’, theory, 97, a5).
+event(224, 'decision support models', theory, 97, a5).
 schedule(224, thursday, 13.5, 14.5, 1.0, p2).
 shift(224, megi, 1, megi0101).
 shift(224, megi, 1, megi0102).
 shift(224, megi, 1, megi0103).
-event(225, ‘decision support models’, laboratory, 30, '0-9').
+event(225, 'decision support models', laboratory, 30, '0-9').
 schedule(225, tuesday, 11.0, 13.0, 2.0, p2).
 shift(225, megi, 1, megi0101).
-event(226, ‘decision support models’, laboratory, 21, '0-73').
+event(226, 'decision support models', laboratory, 21, '0-73').
 schedule(226, friday, 9.5, 11.5, 2.0, p2).
 shift(226, megi, 1, megi0103).
-event(227, ‘decision support models’, practical, 36, '0-25').
+event(227, 'decision support models', practical, 36, '0-25').
 schedule(227, thursday, 16.5, 17.5, 1.0, p2).
 shift(227, megi, 1, megi0101).
-event(228, ‘decision support models’, practical, 36, '0-16').
+event(228, 'decision support models', practical, 36, '0-16').
 schedule(228, tuesday, 16.0, 18.0, 2.0, p2).
 shift(228, megi, 1, megi0101).
-event(229, ‘decision support models’, practical, 26, '0-15').
+event(229, 'decision support models', practical, 26, '0-15').
 schedule(229, wednesday, 14.5, 16.5, 2.0, p2).
 shift(229, megi, 1, megi0102).
-event(230, ‘decision support models’, practical, 26, '0-16').
+event(230, 'decision support models', practical, 26, '0-16').
 schedule(230, friday, 16.0, 17.0, 1.0, p2).
 shift(230, megi, 1, megi0102).
-event(231, ‘decision support models’, practical, 31, '1-3').
+event(231, 'decision support models', practical, 31, '1-3').
 schedule(231, thursday, 14.5, 16.5, 2.0, p2).
 shift(231, megi, 1, megi0103).
-event(232, ‘decision support models’, practical, 31, '1-2').
+event(232, 'decision support models', practical, 31, '1-2').
 schedule(232, friday, 14.5, 15.5, 1.0, p2).
 shift(232, megi, 1, megi0103).
-event(233, ‘decision support models’, laboratory, 40, '0-23').
+event(233, 'decision support models', laboratory, 40, '0-23').
 schedule(233, wednesday, 16.5, 18.5, 2.0, p2).
 shift(233, megi, 1, megi0102).
-event(234, ‘differential and integral calculus i’, 'theoretical-practical', 86, a1).
+event(234, 'differential and integral calculus i', 'theoretical-practical', 86, a1).
 schedule(234, monday, 8.0, 10.0, 2.0, p1_2).
 shift(234, legi, 1, legi0104).
 shift(234, legi, 1, legi0101).
 shift(234, legi, 1, legi0105).
 shift(234, legi, 1, legi0102).
 shift(234, legi, 1, legi0103).
-event(235, ‘differential and integral calculus i’, 'theoretical-practical', 86, a4).
+event(235, 'differential and integral calculus i', 'theoretical-practical', 86, a4).
 schedule(235, tuesday, 12.0, 14.0, 2.0, p1_2).
 shift(235, legi, 1, legi0104).
 shift(235, legi, 1, legi0101).
 shift(235, legi, 1, legi0105).
 shift(235, legi, 1, legi0102).
 shift(235, legi, 1, legi0103).
-event(236, ‘differential and integral calculus i’, 'theoretical-practical', 54, a1).
+event(236, 'differential and integral calculus i', 'theoretical-practical', 54, a1).
 schedule(236, monday, 10.0, 12.0, 2.0, p1_2).
 shift(236, lee, 1, lee0103).
 shift(236, lee, 1, lee0102).
 shift(236, lee, 1, lee0101).
-event(237, ‘differential and integral calculus i’, 'theoretical-practical', 54, a4).
+event(237, 'differential and integral calculus i', 'theoretical-practical', 54, a4).
 schedule(237, thursday, 8.0, 10.0, 2.0, p1_2).
 shift(237, lee, 1, lee0103).
 shift(237, lee, 1, lee0102).
@@ -1026,23 +1026,23 @@ event(238, 'science of complex networks', laboratory, 14, '0-14').
 schedule(238, friday, 13.0, 16.0, 3.0, p1).
 shift(238, meti, 1, merc0101).
 shift(238, 'meic-t', 1, meic-t0101).
-event(239, ‘analysis and synthesis of algorithms’, laboratory, 23, '0-17').
+event(239, 'analysis and synthesis of algorithms', laboratory, 23, '0-17').
 schedule(239, monday, 13.5, 15.0, 1.5, p2).
 shift(239, 'leic-t', 2, leic-t0205).
 shift(239, 'leic-t', 2, leic-t0201).
-event(240, ‘analysis and synthesis of algorithms’, laboratory, 23, '0-14').
+event(240, 'analysis and synthesis of algorithms', laboratory, 23, '0-14').
 schedule(240, wednesday, 10.5, 12.0, 1.5, p2).
 shift(240, 'leic-t', 2, leic-t0205).
 shift(240, 'leic-t', 2, leic-t0201).
-event(241, ‘analysis and synthesis of algorithms’, laboratory, 24, '0-17').
+event(241, 'analysis and synthesis of algorithms', laboratory, 24, '0-17').
 schedule(241, tuesday, 10.5, 12.0, 1.5, p2).
 shift(241, 'leic-t', 2, leic-t0206).
 shift(241, 'leic-t', 2, leic-t0202).
-event(242, ‘analysis and synthesis of algorithms’, laboratory, 24, '0-75').
+event(242, 'analysis and synthesis of algorithms', laboratory, 24, '0-75').
 schedule(242, thursday, 10.5, 12.0, 1.5, p2).
 shift(242, 'leic-t', 2, leic-t0206).
 shift(242, 'leic-t', 2, leic-t0202).
-event(243, ‘analysis and synthesis of algorithms’, theory, 117, a2).
+event(243, 'analysis and synthesis of algorithms', theory, 117, a2).
 schedule(243, monday, 15.0, 17.0, 2.0, p2).
 shift(243, 'leic-t', 2, leic-t0206).
 shift(243, 'leic-t', 2, leic-t0205).
@@ -1050,7 +1050,7 @@ shift(243, 'leic-t', 2, leic-t0202).
 shift(243, 'leic-t', 2, leic-t0204).
 shift(243, 'leic-t', 2, leic-t0201).
 shift(243, 'leic-t', 2, leic-t0203).
-event(244, ‘analysis and synthesis of algorithms’, theory, 117, a5).
+event(244, 'analysis and synthesis of algorithms', theory, 117, a5).
 schedule(244, tuesday, 15.0, 17.0, 2.0, p2).
 shift(244, 'leic-t', 2, leic-t0206).
 shift(244, 'leic-t', 2, leic-t0205).
@@ -1058,7 +1058,7 @@ shift(244, 'leic-t', 2, leic-t0202).
 shift(244, 'leic-t', 2, leic-t0204).
 shift(244, 'leic-t', 2, leic-t0201).
 shift(244, 'leic-t', 2, leic-t0203).
-event(245, ‘analysis and synthesis of algorithms’, theory, 117, a5).
+event(245, 'analysis and synthesis of algorithms', theory, 117, a5).
 schedule(245, friday, 16.5, 17.5, 1.0, p2).
 shift(245, 'leic-t', 2, leic-t0206).
 shift(245, 'leic-t', 2, leic-t0205).
@@ -1066,22 +1066,22 @@ shift(245, 'leic-t', 2, leic-t0202).
 shift(245, 'leic-t', 2, leic-t0204).
 shift(245, 'leic-t', 2, leic-t0201).
 shift(245, 'leic-t', 2, leic-t0203).
-event(246, ‘analysis and synthesis of algorithms’, laboratory, 25, '0-15').
+event(246, 'analysis and synthesis of algorithms', laboratory, 25, '0-15').
 schedule(246, tuesday, 12.5, 14.0, 1.5, p2).
 shift(246, 'leic-t', 2, leic-t0204).
-event(247, ‘analysis and synthesis of algorithms’, laboratory, 25, '0-17').
+event(247, 'analysis and synthesis of algorithms', laboratory, 25, '0-17').
 schedule(247, thursday, 13.0, 14.5, 1.5, p2).
 shift(247, 'leic-t', 2, leic-t0204).
-event(248, ‘analysis and synthesis of algorithms’, laboratory, 25, '0-17').
+event(248, 'analysis and synthesis of algorithms', laboratory, 25, '0-17').
 schedule(248, thursday, 12.5, 14.0, 1.5, p2).
 shift(248, 'leic-t', 2, leic-t0204).
-event(249, ‘analysis and synthesis of algorithms’, laboratory, 18, '0-73').
+event(249, 'analysis and synthesis of algorithms', laboratory, 18, '0-73').
 schedule(249, monday, 10.5, 12.0, 1.5, p2).
 shift(249, 'leic-t', 2, leic-t0203).
-event(250, ‘analysis and synthesis of algorithms’, laboratory, 18, '0-15').
+event(250, 'analysis and synthesis of algorithms', laboratory, 18, '0-15').
 schedule(250, friday, 14.0, 15.5, 1.5, p2).
 shift(250, 'leic-t', 2, leic-t0203).
-event(251, ‘analysis and synthesis of algorithms’, laboratory, 26, '0-23').
+event(251, 'analysis and synthesis of algorithms', laboratory, 26, '0-23').
 schedule(251, friday, 9.0, 10.5, 1.5, p2).
 shift(251, 'leic-t', 2, leic-t0206).
 shift(251, 'leic-t', 2, leic-t0205).
@@ -1089,7 +1089,7 @@ shift(251, 'leic-t', 2, leic-t0202).
 shift(251, 'leic-t', 2, leic-t0204).
 shift(251, 'leic-t', 2, leic-t0201).
 shift(251, 'leic-t', 2, leic-t0203).
-event(252, ‘analysis and synthesis of algorithms’, laboratory, 26, '0-75').
+event(252, 'analysis and synthesis of algorithms', laboratory, 26, '0-75').
 schedule(252, tuesday, 9.0, 10.5, 1.5, p2).
 shift(252, 'leic-t', 2, leic-t0206).
 shift(252, 'leic-t', 2, leic-t0205).
@@ -1103,29 +1103,29 @@ shift(253, meti, 1, merc0101).
 event(254, 'vehicular networks', theory, 9, '0-19').
 schedule(254, monday, 11.5, 13.5, 2.0, p2).
 shift(254, meti, 1, merc0101).
-event(255, ‘software security’, laboratory, 28, '0-21').
+event(255, 'software security', laboratory, 28, '0-21').
 schedule(255, tuesday, 15.5, 17.0, 1.5, p2).
 shift(255, 'meic-t', 1, meic-t0101).
-event(256, ‘software security’, laboratory, 28, '0-21').
+event(256, 'software security', laboratory, 28, '0-21').
 schedule(256, monday, 9.5, 11.0, 1.5, p2).
 shift(256, 'meic-t', 1, meic-t0101).
-event(257, ‘software security’, laboratory, 30, '0-21').
+event(257, 'software security', laboratory, 30, '0-21').
 schedule(257, tuesday, 12.0, 13.5, 1.5, p2).
 shift(257, meti, 1, merc0101).
 shift(257, 'meic-t', 1, meic-t0101).
-event(258, ‘software security’, laboratory, 30, '0-21').
+event(258, 'software security', laboratory, 30, '0-21').
 schedule(258, monday, 13.5, 15.0, 1.5, p2).
 shift(258, meti, 1, merc0101).
 shift(258, 'meic-t', 1, meic-t0101).
-event(259, ‘software security’, theory, 54, a1).
+event(259, 'software security', theory, 54, a1).
 schedule(259, thursday, 11.5, 13.0, 1.5, undefined).
 shift(259, meti, 1, merc0101).
 shift(259, 'meic-t', 1, meic-t0101).
-event(260, ‘software security’, theory, 54, '1-24').
+event(260, 'software security', theory, 54, '1-24').
 schedule(260, tuesday, 10.0, 12.0, 2.0, p2).
 shift(260, meti, 1, merc0101).
 shift(260, 'meic-t', 1, meic-t0101).
-event(261, ‘software security’, theory, 54, a1).
+event(261, 'software security', theory, 54, a1).
 schedule(261, thursday, 11.5, 13.5, 2.0, p2).
 shift(261, meti, 1, merc0101).
 shift(261, 'meic-t', 1, meic-t0101).
@@ -1175,52 +1175,52 @@ event(274, 'engineering and technology of business processes', seminar, 37, '0-1
 schedule(274, wednesday, 14.0, 17.0, 3.0, p2).
 shift(274, meti, 1, merc0101).
 shift(274, 'meic-t', 1, meic-t0101).
-event(275, ‘computer organization’, laboratory, 23, '0-21').
+event(275, 'computer organization', laboratory, 23, '0-21').
 schedule(275, wednesday, 9.0, 10.5, 1.5, p1).
 shift(275, 'leic-t', 3, leic-t0304).
-event(276, ‘computer organization’, laboratory, 23, '0-21').
+event(276, 'computer organization', laboratory, 23, '0-21').
 schedule(276, monday, 9.0, 10.5, 1.5, p1).
 shift(276, 'leic-t', 3, leic-t0304).
-event(277, ‘computer organization’, theory, 85, a3).
+event(277, 'computer organization', theory, 85, a3).
 schedule(277, wednesday, 8.0, 9.0, 1.0, p1).
 shift(277, 'leic-t', 3, leic-t0302).
 shift(277, 'leic-t', 3, leic-t0301).
 shift(277, 'leic-t', 3, leic-t0304).
 shift(277, 'leic-t', 3, leic-t0303).
-event(278, ‘computer organization’, theory, 85, a4).
+event(278, 'computer organization', theory, 85, a4).
 schedule(278, monday, 8.0, 9.0, 1.0, p1).
 shift(278, 'leic-t', 3, leic-t0302).
 shift(278, 'leic-t', 3, leic-t0301).
 shift(278, 'leic-t', 3, leic-t0304).
 shift(278, 'leic-t', 3, leic-t0303).
-event(279, ‘computer organization’, theory, 85, a2).
+event(279, 'computer organization', theory, 85, a2).
 schedule(279, tuesday, 8.0, 9.0, 1.0, p1).
 shift(279, 'leic-t', 3, leic-t0302).
 shift(279, 'leic-t', 3, leic-t0301).
 shift(279, 'leic-t', 3, leic-t0304).
 shift(279, 'leic-t', 3, leic-t0303).
-event(280, ‘computer organization’, theory, 85, a1).
+event(280, 'computer organization', theory, 85, a1).
 schedule(280, thursday, 8.0, 9.0, 1.0, p1).
 shift(280, 'leic-t', 3, leic-t0302).
 shift(280, 'leic-t', 3, leic-t0301).
 shift(280, 'leic-t', 3, leic-t0304).
 shift(280, 'leic-t', 3, leic-t0303).
-event(281, ‘computer organization’, laboratory, 20, '0-21').
+event(281, 'computer organization', laboratory, 20, '0-21').
 schedule(281, tuesday, 9.0, 10.5, 1.5, p1).
 shift(281, 'leic-t', 3, leic-t0303).
-event(282, ‘computer organization’, laboratory, 20, '0-21').
+event(282, 'computer organization', laboratory, 20, '0-21').
 schedule(282, thursday, 11.0, 12.5, 1.5, p1).
 shift(282, 'leic-t', 3, leic-t0303).
-event(283, ‘computer organization’, laboratory, 21, '0-14').
+event(283, 'computer organization', laboratory, 21, '0-14').
 schedule(283, monday, 9.0, 10.5, 1.5, p1).
 shift(283, 'leic-t', 3, leic-t0302).
-event(284, ‘computer organization’, laboratory, 21, '0-14').
+event(284, 'computer organization', laboratory, 21, '0-14').
 schedule(284, wednesday, 9.0, 10.5, 1.5, p1).
 shift(284, 'leic-t', 3, leic-t0302).
-event(285, ‘computer organization’, laboratory, 23, '0-14').
+event(285, 'computer organization', laboratory, 23, '0-14').
 schedule(285, thursday, 11.0, 12.5, 1.5, p1).
 shift(285, 'leic-t', 3, leic-t0301).
-event(286, ‘computer organization’, laboratory, 23, '0-14').
+event(286, 'computer organization', laboratory, 23, '0-14').
 schedule(286, tuesday, 9.0, 10.5, 1.5, p1).
 shift(286, 'leic-t', 3, leic-t0301).
 event(287, 'economic engineering', 'theoretical-practical', 45, '1-24').
@@ -1247,24 +1247,24 @@ event(292, 'performance and sizing of networks and systems', laboratory, 21, '1-
 schedule(292, friday, 10.0, 11.5, 1.5, p2).
 shift(292, meti, 1, merc0101).
 shift(292, 'meic-t', 1, meic-t0101).
-event(293, ‘differential and integral calculus i’, 'theoretical-practical', 65, a4).
+event(293, 'differential and integral calculus i', 'theoretical-practical', 65, a4).
 schedule(293, friday, 10.0, 12.0, 2.0, p1_2).
 shift(293, 'leic-t', 1, leic-t0107).
 shift(293, 'leic-t', 1, leic-t0105).
 shift(293, 'leic-t', 1, leic-t0103).
 shift(293, 'leic-t', 1, leic-t0101).
-event(294, ‘differential and integral calculus i’, 'theoretical-practical', 65, a2).
+event(294, 'differential and integral calculus i', 'theoretical-practical', 65, a2).
 schedule(294, tuesday, 11.5, 13.5, 2.0, p1_2).
 shift(294, 'leic-t', 1, leic-t0107).
 shift(294, 'leic-t', 1, leic-t0105).
 shift(294, 'leic-t', 1, leic-t0103).
 shift(294, 'leic-t', 1, leic-t0101).
-event(295, ‘differential and integral calculus i’, 'theoretical-practical', 65, a2).
+event(295, 'differential and integral calculus i', 'theoretical-practical', 65, a2).
 schedule(295, monday, 8.0, 10.0, 2.0, p1_2).
 shift(295, 'leic-t', 1, leic-t0104).
 shift(295, 'leic-t', 1, leic-t0102).
 shift(295, 'leic-t', 1, leic-t0106).
-event(296, ‘differential and integral calculus i’, 'theoretical-practical', 65, a3).
+event(296, 'differential and integral calculus i', 'theoretical-practical', 65, a3).
 schedule(296, tuesday, 8.0, 10.0, 2.0, p1_2).
 shift(296, 'leic-t', 1, leic-t0104).
 shift(296, 'leic-t', 1, leic-t0102).
@@ -1298,24 +1298,24 @@ schedule(303, monday, 8.0, 9.0, 1.0, p1).
 shift(303, lee, 1, lee0103).
 shift(303, lee, 1, lee0102).
 shift(303, lee, 1, lee0101).
-event(304, ‘physics with laboratory’, theory, 33, a4).
+event(304, 'physics with laboratory', theory, 33, a4).
 schedule(304, wednesday, 14.5, 16.5, 2.0, p2).
 shift(304, lee, 2, lee0202).
 shift(304, lee, 2, lee0201).
-event(305, ‘physics with laboratory’, theory, 33, '1-2').
+event(305, 'physics with laboratory', theory, 33, '1-2').
 schedule(305, monday, 13.5, 15.5, 2.0, p2).
 shift(305, lee, 2, lee0202).
 shift(305, lee, 2, lee0201).
-event(306, ‘physics with laboratory’, laboratory, 0, '1-12').
+event(306, 'physics with laboratory', laboratory, 0, '1-12').
 schedule(306, thursday, 11.0, 13.0, 2.0, p2).
 shift(306, lee, 2, lee0201).
-event(307, ‘physics with laboratory’, laboratory, 0, '1-14').
+event(307, 'physics with laboratory', laboratory, 0, '1-14').
 schedule(307, friday, 10.0, 12.0, 2.0, p2).
 shift(307, lee, 2, lee0202).
-event(308, ‘physics with laboratory’, 'theoretical-practical', 3, '0-17').
+event(308, 'physics with laboratory', 'theoretical-practical', 3, '0-17').
 schedule(308, monday, 17.5, 18.5, 1.0, p2).
 shift(308, lee, 2, lee0202).
-event(309, ‘physics with laboratory’, 'theoretical-practical', 30, '0-15').
+event(309, 'physics with laboratory', 'theoretical-practical', 30, '0-15').
 schedule(309, monday, 15.5, 16.5, 1.0, p2).
 shift(309, lee, 2, lee0201).
 event(310, 'communication systems', laboratory, 13, '1-28').
@@ -1376,23 +1376,23 @@ shift(320, lee, 3, lee0302).
 shift(320, leti, 3, leti0303).
 shift(320, leti, 3, leti0302).
 shift(320, leti, 3, leti0301).
-event(321, ‘physics with laboratory’, 'theoretical-practical', 3, '0-9').
+event(321, 'physics with laboratory', 'theoretical-practical', 3, '0-9').
 schedule(321, wednesday, 13.5, 14.5, 1.0, p1).
 shift(321, lee, 2, lee0202).
-event(322, ‘physics with laboratory’, 'theoretical-practical', 28, '0-17').
+event(322, 'physics with laboratory', 'theoretical-practical', 28, '0-17').
 schedule(322, wednesday, 12.5, 13.5, 1.0, p1).
 shift(322, lee, 2, lee0201).
-event(323, ‘physics with laboratory’, laboratory, 0, '1-14').
+event(323, 'physics with laboratory', laboratory, 0, '1-14').
 schedule(323, monday, 15.5, 17.5, 2.0, p1).
 shift(323, lee, 2, lee0201).
-event(324, ‘physics with laboratory’, laboratory, 0, '1-14').
+event(324, 'physics with laboratory', laboratory, 0, '1-14').
 schedule(324, tuesday, 11.0, 13.0, 2.0, p1).
 shift(324, lee, 2, lee0202).
-event(325, ‘physics with laboratory’, theory, 31, a4).
+event(325, 'physics with laboratory', theory, 31, a4).
 schedule(325, tuesday, 14.5, 16.5, 2.0, p1).
 shift(325, lee, 2, lee0202).
 shift(325, lee, 2, lee0201).
-event(326, ‘physics with laboratory’, theory, 31, a4).
+event(326, 'physics with laboratory', theory, 31, a4).
 schedule(326, monday, 13.5, 15.5, 2.0, p1).
 shift(326, lee, 2, lee0202).
 shift(326, lee, 2, lee0201).
@@ -1434,67 +1434,67 @@ shift(335, 'meic-t', 1, meic-t0101).
 event(336, 'computer graphics for games', laboratory, 22, '1-29').
 schedule(336, tuesday, 10.5, 12.0, 1.5, p2).
 shift(336, 'meic-t', 1, meic-t0101).
-event(337, ‘game design’, theory, 41, '1-3').
+event(337, 'game design', theory, 41, '1-3').
 schedule(337, monday, 11.0, 13.0, 2.0, p1).
 shift(337, 'meic-t', 1, meic-t0101).
-event(338, ‘game design’, theory, 41, '1-3').
+event(338, 'game design', theory, 41, '1-3').
 schedule(338, monday, 9.0, 11.0, 2.0, p1).
 shift(338, 'meic-t', 1, meic-t0101).
-event(339, ‘game design’, laboratory, 15, '1-32').
+event(339, 'game design', laboratory, 15, '1-32').
 schedule(339, tuesday, 9.5, 12.5, 3.0, p1).
 shift(339, 'meic-t', 1, meic-t0101).
-event(340, ‘game design’, laboratory, 7, '1-32').
+event(340, 'game design', laboratory, 7, '1-32').
 schedule(340, tuesday, 15.5, 18.5, 3.0, p1).
 shift(340, 'meic-t', 1, meic-t0101).
-event(341, ‘game design’, laboratory, 20, '1-32').
+event(341, 'game design', laboratory, 20, '1-32').
 schedule(341, monday, 14.0, 17.0, 3.0, p1).
 shift(341, 'meic-t', 1, meic-t0101).
 event(342, 'cross-cutting skills mee i', seminar, 13, NoRoom).
 schedule(342, friday, 10.0, 12.0, 2.0, p1).
 shift(342, mee, 1, mee0101).
-event(343, ‘linear algebra’, 'theoretical-practical', 68, NoRoom).
+event(343, 'linear algebra', 'theoretical-practical', 68, NoRoom).
 schedule(343, thursday, 8.0, 10.0, 2.0, p1_2).
 shift(343, leti, 1, leti0103).
 shift(343, leti, 1, leti0102).
 shift(343, leti, 1, leti0101).
-event(344, ‘linear algebra’, 'theoretical-practical', 68, a1).
+event(344, 'linear algebra', 'theoretical-practical', 68, a1).
 schedule(344, tuesday, 11.5, 13.5, 2.0, p1_2).
 shift(344, leti, 1, leti0103).
 shift(344, leti, 1, leti0102).
 shift(344, leti, 1, leti0101).
-event(345, ‘computing and programming’, laboratory, 30, '0-9').
+event(345, 'computing and programming', laboratory, 30, '0-9').
 schedule(345, thursday, 11.0, 13.0, 2.0, p2).
 shift(345, legi, 1, legi0105).
 shift(345, legi, 1, legi0102).
-event(346, ‘computing and programming’, laboratory, 30, '0-73').
+event(346, 'computing and programming', laboratory, 30, '0-73').
 schedule(346, tuesday, 10.0, 12.0, 2.0, p2).
 shift(346, legi, 1, legi0105).
 shift(346, legi, 1, legi0102).
-event(347, ‘computing and programming’, theory, 91, a3).
+event(347, 'computing and programming', theory, 91, a3).
 schedule(347, thursday, 9.0, 11.0, 2.0, p2).
 shift(347, legi, 1, legi0104).
 shift(347, legi, 1, legi0101).
 shift(347, legi, 1, legi0105).
 shift(347, legi, 1, legi0102).
 shift(347, legi, 1, legi0103).
-event(348, ‘computing and programming’, theory, 91, a2).
+event(348, 'computing and programming', theory, 91, a2).
 schedule(348, monday, 10.0, 12.0, 2.0, p2).
 shift(348, legi, 1, legi0104).
 shift(348, legi, 1, legi0101).
 shift(348, legi, 1, legi0105).
 shift(348, legi, 1, legi0102).
 shift(348, legi, 1, legi0103).
-event(349, ‘computing and programming’, laboratory, 26, '1-15').
+event(349, 'computing and programming', laboratory, 26, '1-15').
 schedule(349, wednesday, 9.5, 11.5, 2.0, p2).
 shift(349, legi, 1, legi0103).
-event(350, ‘computing and programming’, laboratory, 26, '1-15').
+event(350, 'computing and programming', laboratory, 26, '1-15').
 schedule(350, friday, 8.0, 10.0, 2.0, p2).
 shift(350, legi, 1, legi0103).
-event(351, ‘computing and programming’, laboratory, 32, a1).
+event(351, 'computing and programming', laboratory, 32, a1).
 schedule(351, friday, 10.0, 12.0, 2.0, p2).
 shift(351, legi, 1, legi0104).
 shift(351, legi, 1, legi0101).
-event(352, ‘computing and programming’, laboratory, 32, '1-4').
+event(352, 'computing and programming', laboratory, 32, '1-4').
 schedule(352, wednesday, 11.5, 13.5, 2.0, p2).
 shift(352, legi, 1, legi0104).
 shift(352, legi, 1, legi0101).
@@ -1679,27 +1679,27 @@ event(394, management, theory, 41, '1-4').
 schedule(394, thursday, 13.0, 15.0, 2.0, p1).
 shift(394, lee, 2, lee0202).
 shift(394, lee, 2, lee0201).
-event(395, ‘general chemistry’, laboratory, 22, '1-75').
+event(395, 'general chemistry', laboratory, 22, '1-75').
 schedule(395, thursday, 10.0, 12.0, 2.0, p1).
 shift(395, lee, 1, lee0103).
 shift(395, lee, 1, lee0101).
-event(396, ‘general chemistry’, laboratory, 19, '1-75').
+event(396, 'general chemistry', laboratory, 19, '1-75').
 schedule(396, wednesday, 9.5, 11.5, 2.0, p1).
 shift(396, legi, 1, legi0102).
 shift(396, legi, 1, legi0103).
-event(397, ‘general chemistry’, problems, 37, '0-17').
+event(397, 'general chemistry', problems, 37, '0-17').
 schedule(397, thursday, 13.5, 15.5, 2.0, p1).
 shift(397, lee, 1, lee0103).
 shift(397, lee, 1, lee0102).
 shift(397, lee, 1, lee0101).
-event(398, ‘general chemistry’, laboratory, 19, '1-75').
+event(398, 'general chemistry', laboratory, 19, '1-75').
 schedule(398, wednesday, 14.5, 16.5, 2.0, p1).
 shift(398, legi, 1, legi0104).
 shift(398, legi, 1, legi0103).
-event(399, ‘general chemistry’, laboratory, 18, '1-75').
+event(399, 'general chemistry', laboratory, 18, '1-75').
 schedule(399, friday, 10.0, 12.0, 2.0, p1).
 shift(399, legi, 1, legi0101).
-event(400, ‘general chemistry’, theory, 81, a3).
+event(400, 'general chemistry', theory, 81, a3).
 schedule(400, friday, 12.0, 13.0, 1.0, p1).
 shift(400, legi, 1, legi0104).
 shift(400, legi, 1, legi0101).
@@ -1709,11 +1709,11 @@ shift(400, legi, 1, legi0103).
 shift(400, lee, 1, lee0103).
 shift(400, lee, 1, lee0102).
 shift(400, lee, 1, lee0101).
-event(401, ‘general chemistry’, problems, 29, '0-9').
+event(401, 'general chemistry', problems, 29, '0-9').
 schedule(401, tuesday, 15.0, 17.0, 2.0, p1).
 shift(401, legi, 1, legi0104).
 shift(401, legi, 1, legi0102).
-event(402, ‘general chemistry’, theory, 112, a2).
+event(402, 'general chemistry', theory, 112, a2).
 schedule(402, wednesday, 11.5, 13.5, 2.0, p1).
 shift(402, legi, 1, legi0104).
 shift(402, legi, 1, legi0101).
@@ -1723,7 +1723,7 @@ shift(402, legi, 1, legi0103).
 shift(402, lee, 1, lee0103).
 shift(402, lee, 1, lee0102).
 shift(402, lee, 1, lee0101).
-event(403, ‘general chemistry’, theory, 112, a1).
+event(403, 'general chemistry', theory, 112, a1).
 schedule(403, tuesday, 8.0, 10.0, 2.0, p1).
 shift(403, legi, 1, legi0104).
 shift(403, legi, 1, legi0101).
@@ -1733,16 +1733,16 @@ shift(403, legi, 1, legi0103).
 shift(403, lee, 1, lee0103).
 shift(403, lee, 1, lee0102).
 shift(403, lee, 1, lee0101).
-event(404, ‘general chemistry’, laboratory, 20, '1-75').
+event(404, 'general chemistry', laboratory, 20, '1-75').
 schedule(404, monday, 10.0, 12.0, 2.0, p1).
 shift(404, legi, 1, legi0105).
 shift(404, legi, 1, legi0102).
-event(405, ‘general chemistry’, problems, 40, '0-25').
+event(405, 'general chemistry', problems, 40, '0-25').
 schedule(405, tuesday, 10.0, 12.0, 2.0, p1).
 shift(405, legi, 1, legi0101).
 shift(405, legi, 1, legi0105).
 shift(405, legi, 1, legi0103).
-event(406, ‘general chemistry’, laboratory, 17, '1-75').
+event(406, 'general chemistry', laboratory, 17, '1-75').
 schedule(406, friday, 8.0, 10.0, 2.0, p1).
 shift(406, lee, 1, lee0102).
 event(407, 'project evaluation', theory, 107, a2).
@@ -2130,40 +2130,40 @@ shift(501, 'meic-t', 1, meic-t0101).
 event(502, 'cybersecurity in networks and systems', laboratory, 24, '0-14').
 schedule(502, thursday, 8.5, 11.5, 3.0, p2).
 shift(502, 'meic-t', 1, meic-t0101).
-event(503, ‘data science’, laboratory, 0, '1-19').
+event(503, 'data science', laboratory, 0, '1-19').
 schedule(503, thursday, 16.0, 17.5, 1.5, p2).
 shift(503, 'meic-t', 1, meic-t0101).
-event(504, ‘data science’, laboratory, 0, '1-19').
+event(504, 'data science', laboratory, 0, '1-19').
 schedule(504, thursday, 14.5, 16.0, 1.5, p2).
 shift(504, 'meic-t', 1, meic-t0101).
-event(505, ‘data science’, laboratory, 0, '1-19').
+event(505, 'data science', laboratory, 0, '1-19').
 schedule(505, thursday, 11.0, 12.5, 1.5, p2).
 shift(505, 'meic-t', 1, meic-t0101).
-event(506, ‘data science’, laboratory, 0, '1-19').
+event(506, 'data science', laboratory, 0, '1-19').
 schedule(506, thursday, 12.5, 14.0, 1.5, p2).
 shift(506, 'meic-t', 1, meic-t0101).
-event(507, ‘data science’, laboratory, 20, '1-19').
+event(507, 'data science', laboratory, 20, '1-19').
 schedule(507, tuesday, 11.0, 12.5, 1.5, p2).
 shift(507, megi, 2, megi0201).
 shift(507, meti, 1, merc0101).
 shift(507, 'meic-t', 1, meic-t0101).
-event(508, ‘data science’, laboratory, 20, '1-15').
+event(508, 'data science', laboratory, 20, '1-15').
 schedule(508, tuesday, 12.5, 14.0, 1.5, p2).
 shift(508, megi, 2, megi0201).
 shift(508, meti, 1, merc0101).
 shift(508, 'meic-t', 1, meic-t0101).
-event(509, ‘data science’, laboratory, 17, '1-17').
+event(509, 'data science', laboratory, 17, '1-17').
 schedule(509, tuesday, 14.0, 15.5, 1.5, p2).
 shift(509, 'meic-t', 1, meic-t0101).
-event(510, ‘data science’, laboratory, 17, '1-19').
+event(510, 'data science', laboratory, 17, '1-19').
 schedule(510, tuesday, 12.5, 14.0, 1.5, p2).
 shift(510, 'meic-t', 1, meic-t0101).
-event(511, ‘data science’, theory, 77, a5).
+event(511, 'data science', theory, 77, a5).
 schedule(511, tuesday, 9.0, 11.0, 2.0, p2).
 shift(511, megi, 2, megi0201).
 shift(511, meti, 1, merc0101).
 shift(511, 'meic-t', 1, meic-t0101).
-event(512, ‘data science’, theory, 77, '0-65').
+event(512, 'data science', theory, 77, '0-65').
 schedule(512, monday, 10.0, 12.0, 2.0, p2).
 shift(512, megi, 2, megi0201).
 shift(512, meti, 1, merc0101).
@@ -2252,25 +2252,25 @@ event(530, 'management (legi)', practical, 29, '0-73').
 schedule(530, monday, 13.0, 14.5, 1.5, p1).
 shift(530, legi, 1, legi0102).
 shift(530, legi, 1, legi0103).
-event(531, ‘linear algebra’, 'theoretical-practical', 61, a5).
+event(531, 'linear algebra', 'theoretical-practical', 61, a5).
 schedule(531, monday, 14.5, 16.5, 2.0, p1_2).
 shift(531, legi, 1, legi0102).
 shift(531, legi, 1, legi0103).
 shift(531, lee, 1, lee0102).
 shift(531, lee, 1, lee0101).
-event(532, ‘linear algebra’, 'theoretical-practical', 61, a3).
+event(532, 'linear algebra', 'theoretical-practical', 61, a3).
 schedule(532, friday, 10.0, 12.0, 2.0, p1_2).
 shift(532, legi, 1, legi0102).
 shift(532, legi, 1, legi0103).
 shift(532, lee, 1, lee0102).
 shift(532, lee, 1, lee0101).
-event(533, ‘linear algebra’, 'theoretical-practical', 65, a3).
+event(533, 'linear algebra', 'theoretical-practical', 65, a3).
 schedule(533, wednesday, 9.5, 11.5, 2.0, p1_2).
 shift(533, legi, 1, legi0104).
 shift(533, legi, 1, legi0101).
 shift(533, legi, 1, legi0105).
 shift(533, lee, 1, lee0103).
-event(534, ‘linear algebra’, 'theoretical-practical', 65, a5).
+event(534, 'linear algebra', 'theoretical-practical', 65, a5).
 schedule(534, monday, 12.0, 14.0, 2.0, p1_2).
 shift(534, legi, 1, legi0104).
 shift(534, legi, 1, legi0101).
@@ -2331,19 +2331,19 @@ event(545, 'sensors and actuators', laboratory, 2, '1-64').
 schedule(545, wednesday, 16.5, 18.0, 1.5, p2).
 shift(545, mee, 1, mee0101).
 shift(545, meti, 1, merc0101).
-event(546, 'administration and management of IT infrastructure and services', theory, 54, a3).
+event(546, 'administration and management of it infrastructure and services', theory, 54, a3).
 schedule(546, friday, 17.5, 19.5, 2.0, p1).
 shift(546, meti, 1, merc0101).
 shift(546, 'meic-t', 1, meic-t0101).
-event(547, 'administration and management of IT infrastructure and services', theory, 54, a4).
+event(547, 'administration and management of it infrastructure and services', theory, 54, a4).
 schedule(547, monday, 11.0, 13.0, 2.0, p1).
 shift(547, meti, 1, merc0101).
 shift(547, 'meic-t', 1, meic-t0101).
-event(548, 'administration and management of IT infrastructure and services', laboratory, 18, '0-27').
+event(548, 'administration and management of it infrastructure and services', laboratory, 18, '0-27').
 schedule(548, tuesday, 13.5, 16.5, 3.0, p1).
 shift(548, meti, 1, merc0101).
 shift(548, 'meic-t', 1, meic-t0101).
-event(549, 'administration and management of IT infrastructure and services', laboratory, 18, '0-27').
+event(549, 'administration and management of it infrastructure and services', laboratory, 18, '0-27').
 schedule(549, tuesday, 8.0, 11.0, 3.0, p1).
 shift(549, 'meic-t', 1, meic-t0101).
 event(550, 'fundamentals of programming', laboratory, 22, '0-23').
@@ -2522,61 +2522,61 @@ schedule(587, friday, 10.5, 12.0, 1.5, p2).
 shift(587, leti, 3, leti0303).
 shift(587, leti, 3, leti0302).
 shift(587, leti, 3, leti0301).
-event(588, ‘differential and integral calculus iii’, 'theoretical-practical', 67, a4).
+event(588, 'differential and integral calculus iii', 'theoretical-practical', 67, a4).
 schedule(588, monday, 15.5, 17.5, 2.0, p1_2).
 shift(588, legi, 2, legi0205).
 shift(588, legi, 2, legi0204).
 shift(588, legi, 2, legi0201).
 shift(588, lee, 2, lee0202).
-event(589, ‘differential and integral calculus iii’, 'theoretical-practical', 67, a1).
+event(589, 'differential and integral calculus iii', 'theoretical-practical', 67, a1).
 schedule(589, friday, 12.5, 14.5, 2.0, p1_2).
 shift(589, legi, 2, legi0205).
 shift(589, legi, 2, legi0204).
 shift(589, legi, 2, legi0201).
 shift(589, lee, 2, lee0202).
-event(590, ‘differential and integral calculus iii’, 'theoretical-practical', 69, a5).
+event(590, 'differential and integral calculus iii', 'theoretical-practical', 69, a5).
 schedule(590, friday, 14.5, 16.5, 2.0, p1_2).
 shift(590, leti, 2, leti0201).
 shift(590, leti, 2, leti0203).
 shift(590, leti, 2, leti0202).
 shift(590, leti, 2, leti0204).
-event(591, ‘differential and integral calculus iii’, 'theoretical-practical', 69, a4).
+event(591, 'differential and integral calculus iii', 'theoretical-practical', 69, a4).
 schedule(591, thursday, 13.0, 15.0, 2.0, p1_2).
 shift(591, leti, 2, leti0201).
 shift(591, leti, 2, leti0203).
 shift(591, leti, 2, leti0202).
 shift(591, leti, 2, leti0204).
-event(592, ‘differential and integral calculus iii’, 'theoretical-practical', 67, a4).
+event(592, 'differential and integral calculus iii', 'theoretical-practical', 67, a4).
 schedule(592, thursday, 16.0, 18.0, 2.0, p1_2).
 shift(592, 'leic-t', 2, leic-t0206).
 shift(592, 'leic-t', 2, leic-t0202).
 shift(592, 'leic-t', 2, leic-t0204).
-event(593, ‘differential and integral calculus iii’, 'theoretical-practical', 67, '1-2').
+event(593, 'differential and integral calculus iii', 'theoretical-practical', 67, '1-2').
 schedule(593, monday, 10.0, 12.0, 2.0, p1_2).
 shift(593, 'leic-t', 2, leic-t0206).
 shift(593, 'leic-t', 2, leic-t0202).
 shift(593, 'leic-t', 2, leic-t0204).
-event(594, ‘differential and integral calculus iii’, 'theoretical-practical', 63, '0-75').
+event(594, 'differential and integral calculus iii', 'theoretical-practical', 63, '0-75').
 schedule(594, friday, 10.0, 12.0, 2.0, p1_2).
 shift(594, legi, 2, legi0202).
 shift(594, legi, 2, legi0203).
 shift(594, lee, 2, lee0201).
-event(595, ‘differential and integral calculus iii’, 'theoretical-practical', 63, '0-75').
+event(595, 'differential and integral calculus iii', 'theoretical-practical', 63, '0-75').
 schedule(595, tuesday, 11.0, 13.0, 2.0, p1_2).
 shift(595, legi, 2, legi0202).
 shift(595, legi, 2, legi0203).
 shift(595, lee, 2, lee0201).
-event(596, ‘differential and integral calculus iii’, 'theoretical-practical', 70, '1-2').
+event(596, 'differential and integral calculus iii', 'theoretical-practical', 70, '1-2').
 schedule(596, thursday, 17.0, 19.0, 2.0, undefined).
 shift(596, 'leic-t', 2, leic-t0205).
 shift(596, 'leic-t', 2, leic-t0201).
 shift(596, 'leic-t', 2, leic-t0203).
-event(597, ‘differential and integral calculus iii’, 'theoretical-practical', 70, a5).
+event(597, 'differential and integral calculus iii', 'theoretical-practical', 70, a5).
 schedule(597, wednesday, 13.0, 15.0, 2.0, p1_2).
 shift(597, 'leic-t', 2, leic-t0205).
 shift(597, 'leic-t', 2, leic-t0201).
 shift(597, 'leic-t', 2, leic-t0203).
-event(598, ‘differential and integral calculus iii’, 'theoretical-practical', 70, a2).
+event(598, 'differential and integral calculus iii', 'theoretical-practical', 70, a2).
 schedule(598, thursday, 17.0, 19.0, 2.0, p1_2).
 shift(598, 'leic-t', 2, leic-t0205).
 shift(598, 'leic-t', 2, leic-t0201).
@@ -2675,45 +2675,45 @@ event(622, 'geometric design and modeling', laboratory, 39, '1-24').
 schedule(622, wednesday, 11.5, 13.5, 2.0, p2).
 shift(622, legi, 1, legi0105).
 shift(622, legi, 1, legi0102).
-event(623, ‘physics ii’, theory, 92, a5).
+event(623, 'physics ii', theory, 92, a5).
 schedule(623, wednesday, 15.0, 17.0, 2.0, p2).
 shift(623, legi, 2, legi0205).
 shift(623, legi, 2, legi0202).
 shift(623, legi, 2, legi0204).
 shift(623, legi, 2, legi0201).
 shift(623, legi, 2, legi0203).
-event(624, ‘physics ii’, theory, 92, a1).
+event(624, 'physics ii', theory, 92, a1).
 schedule(624, monday, 17.5, 19.5, 2.0, p2).
 shift(624, legi, 2, legi0205).
 shift(624, legi, 2, legi0202).
 shift(624, legi, 2, legi0204).
 shift(624, legi, 2, legi0201).
 shift(624, legi, 2, legi0203).
-event(625, ‘physics ii’, 'theoretical-practical', 20, '0-17').
+event(625, 'physics ii', 'theoretical-practical', 20, '0-17').
 schedule(625, friday, 14.5, 16.0, 1.5, p2).
 shift(625, legi, 2, legi0201).
-event(626, ‘physics ii’, 'theoretical-practical', 20, '0-15').
+event(626, 'physics ii', 'theoretical-practical', 20, '0-15').
 schedule(626, thursday, 14.0, 15.5, 1.5, p2).
 shift(626, legi, 2, legi0201).
-event(627, ‘physics ii’, 'theoretical-practical', 25, '0-17').
+event(627, 'physics ii', 'theoretical-practical', 25, '0-17').
 schedule(627, friday, 13.0, 14.5, 1.5, p2).
 shift(627, legi, 2, legi0205).
 shift(627, legi, 2, legi0202).
 shift(627, legi, 2, legi0204).
 shift(627, legi, 2, legi0203).
-event(628, ‘physics ii’, 'theoretical-practical', 25, '0-9').
+event(628, 'physics ii', 'theoretical-practical', 25, '0-9').
 schedule(628, monday, 16.0, 17.5, 1.5, p2).
 shift(628, legi, 2, legi0205).
 shift(628, legi, 2, legi0202).
 shift(628, legi, 2, legi0204).
 shift(628, legi, 2, legi0203).
-event(629, ‘physics ii’, 'theoretical-practical', 40, '0-23').
+event(629, 'physics ii', 'theoretical-practical', 40, '0-23').
 schedule(629, monday, 14.0, 15.5, 1.5, p2).
 shift(629, legi, 2, legi0205).
 shift(629, legi, 2, legi0202).
 shift(629, legi, 2, legi0204).
 shift(629, legi, 2, legi0203).
-event(630, ‘physics ii’, 'theoretical-practical', 40, '0-16').
+event(630, 'physics ii', 'theoretical-practical', 40, '0-16').
 schedule(630, thursday, 17.5, 19.0, 1.5, p2).
 shift(630, legi, 2, legi0205).
 shift(630, legi, 2, legi0202).
@@ -3243,23 +3243,23 @@ shift(737, legi, 2, legi0202).
 event(738, 'introduction to electrical power systems', problems, 20, '0-25').
 schedule(738, thursday, 16.5, 18.5, 2.0, p4).
 shift(738, legi, 2, legi0203).
-event(739, ‘physics with laboratory’, laboratory, 21, '1-14').
+event(739, 'physics with laboratory', laboratory, 21, '1-14').
 schedule(739, tuesday, 8.0, 10.0, 2.0, p3).
 shift(739, lee, 1, lee0101).
 shift(739, lee, 1, lee0103).
-event(740, ‘physics with laboratory’, problems, 29, '0-25').
+event(740, 'physics with laboratory', problems, 29, '0-25').
 schedule(740, thursday, 11.0, 12.0, 1.0, p3).
 shift(740, lee, 1, lee0101).
 shift(740, lee, 1, lee0103).
-event(741, ‘physics with laboratory’, laboratory, 21, '1-14').
+event(741, 'physics with laboratory', laboratory, 21, '1-14').
 schedule(741, thursday, 12.5, 14.5, 2.0, p3).
 shift(741, lee, 1, lee0102).
-event(742, ‘physics with laboratory’, theory, 42, '1-22').
+event(742, 'physics with laboratory', theory, 42, '1-22').
 schedule(742, monday, 10.0, 12.0, 2.0, p3).
 shift(742, lee, 1, lee0101).
 shift(742, lee, 1, lee0102).
 shift(742, lee, 1, lee0103).
-event(743, ‘physics with laboratory’, theory, 42, '1-24').
+event(743, 'physics with laboratory', theory, 42, '1-24').
 schedule(743, monday, 10.5, 12.5, 2.0, undefined).
 shift(743, lee, 1, lee0101).
 shift(743, lee, 1, lee0102).
